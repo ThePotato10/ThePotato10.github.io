@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Interval Tracker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name='description' content='Free interval tracker for workouts'>
+        <meta name='keywords' content='workout,timer,interval,tracker'>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' type='text/css' href='style.css'/>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@700&display=swap" rel="stylesheet">
+        <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+        <script src='script.js'></script>
+    </head>
+    <body onload="loadSound();">
+        <div class='background'></div>
+        <div class='backgroundTwo'></div>
+        <p class='extra'>Hello!</p>
+        <div class='title'>
+            <h1>Timer for Workouts</h1>
+        </div>
+        <hr id='lineOne'>
+        <hr id='lineTwo'>
+        <div class='vlOne'></div>
+        <div class='vlTwo'></div>
+        <div class='vlThree'></div>
+        <div class='content'>
+            <p>Sometimes when you're working out, you need to immediately transfer from doing something                 for 30 seconds to doing something for 45 seconds. Stopping to reset a timer defeats the 
+                purpose of the set, and counting in your head is innaccurate. This website allows you to 
+                schedule several intervals in a row, fixing this problem. Simply type in the exercise 
+                you're doing, how long you want to do it for, and how long you want to rest afterwards. 
+                If you don't want to rest afterwards, simply type '0' in the Rest Duration box. When you 
+                hear a ding, that's the end of the current interval. Schedule as many intervals as you 
+                would like!
+            </p>
+        </div>
+        <div class='table'>
+            <table align='left'>
+                <thead>
+                    <th>Exercise</th>
+                    <th>Duration</th>
+                    <th>Rest Duration</th>
+                </thead>
+                <tbody id='tableB'>
+                    <tr id='tr'>
+                        <td><input type='text' id='x-1'></input></td>
+                        <td><input type='number' id='y-1'></input></td>
+                        <td><input type='number' id='z-1'></input></td>
+                    </tr>
+                    <tr>
+                        <td><input type='text' id='x-2'></input></td>
+                        <td><input type='number' id='y-2'></input></td>
+                        <td><input type='number' id='z-2'></input></td>
+                    </tr>
+                    <tr>
+                        <td><input type='text' id='x-3'></input></td>
+                        <td><input type='number' id='y-3'></input></td>
+                        <td><input type='number' id='z-3'></input></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <img src='https://bit.ly/2JZ9UPO' id='sleep'/>
+        <div class='buttons'>
+            <button id='plus' onclick='addInputOption()'>+</button><p id='inline'>___</p><button od='minus' onclick='deleteInputOption()'>-</button>
+            <br>
+            <br>
+            <button onclick="submit()">Submit Data</button><br><br><button onclick='togglePause()'>Pause</button>
+        </div>
+        <p id='timer'>00:00</p>
+        <p id='paused'>The Timer Has Not Been Activated</p>
+        <img id='img' src='https://www.paramounthealthcare.com/assets/images/thumbnails/health_lifestyle_generic.jpg'/>
+        <ul id='list'></ul>
+        <div class='sidebar'>
+            <p id='jd'>There's more to being healthy than just setting intervals. The first list of three links have 
+                some ideas for exercises to try, while the second list has tips on how to be healthy outside 
+                of working out</p>
+        </div>
+            <hr id='lineThree'>
+            <hr id='lineFour'>
+            <hr id='lineFive'>
+        <div class='images'>
+            <img src='https://www.gedlingeye.co.uk/wp-content/uploads/2017/01/healthyeating.jpg'/><img src='https://kinesophy.com/wp-content/uploads/2018/07/meditation.png'/>
+        </div>
+        <div class='linksOne'>
+            <ul>
+                <li><a target='_blank' href='https://www.healthline.com/health/fitness-exercises/10-best-exercises-everyday'>Basic Exercises</a></li>
+                <li><a target='_blank' href='https://www.menshealth.com/uk/building-muscle/a756325/10-best-bodyweight-exercises-for-men/'>Bodyweight Exercises</a></li>
+                <li><a target='_blank' href='https://greatist.com/fitness/50-bodyweight-exercises-you-can-do-anywhere'>More Bodyweight Exercises</a></li>
+            </ul>
+        </div>
+        <div class='linksTwo'>
+            <ul>
+                <li><a target='_blank' href='https://www.webmd.com/sleep-disorders/benefits-sleep-more'>Sleep Better</a></li>
+                <li><a target='_blank' href='https://www.medicalnewstoday.com/articles/322268'>Eat Healthy</a></li>
+                <li><a target='_blank' href='https://positivepsychology.com/benefits-of-mindfulness/'>Try Mindfulness</a></li>
+            </ul>
+        </div>
+        <div class='logu'>
+            <img id='logo' src='logo.jpeg'/>
+            <p id='logotext'>Building good, functional website that actually do what you want</p>
+        </div>
+    </body>
+</html>
