@@ -783,6 +783,9 @@ img {
     #timer {
         font-size: 3.2em;
     }
+    .sidebar {
+        color: green;
+    }
     #paused {
         font-size: 0.9em;
     }
@@ -795,6 +798,7 @@ img {
     }
     .buttons {
         grid-row: 15 / 18;
+    }
     @media (min-height: 380px) {
         .vlTwo {
             height: 114vh;
