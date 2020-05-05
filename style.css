@@ -75,7 +75,7 @@ body {
     }
     .intro {
         grid-row: 4 / 14;
-        grid-column: 1 / 7;
+        grid-column: 1 / 6;
         margin-bottom: 7vw;
     }
     .credit {
