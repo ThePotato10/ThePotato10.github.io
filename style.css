@@ -1,0 +1,86 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    background-color: #5a5a5a;
+    color: whitesmoke;
+}
+@media screen and (orientation: landscape) {
+    .landscape {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(20, 1fr);
+        grid-template-rows: repeat(40, 5%);
+        grid-gap: 10px;
+    }
+    img {
+        height: 25vw;
+        width: 30%;
+        flex: 1;
+        border: 1px solid #9f9f99;
+    }
+    p {
+        font-size: calc(10px + (12 - 2) * ((100vw - 300px) / (1600 - 300)));
+    }
+    .header {
+        background-color: #323278;
+        margin: -10px;
+        height: 6vh;
+        border: 2px solid whitesmoke;
+        position: fixed;
+        width: 100%;
+    }
+    #info {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: calc(12px + (25 - 12) * ((100vw - 300px) / (1600 - 300)));
+        color: whitesmoke;
+        grid-column: 1 / 15;
+        grid-row: 1 / 2;
+        margin-left: 3vw;
+        margin-top: 0.8vh;
+    }
+    #info a {
+        color: whitesmoke;
+    }
+    .search {
+        grid-column: 1 / 6;
+        grid-row: 24 / 26;
+        border: 1px solid whitesmoke;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1vw; 
+    }
+    input {
+        width: 80%;
+        height: 30%;
+    }
+    .images {
+        grid-column: 7 / 20;
+        grid-row-start: 3;
+        border: 2px solid whitesmoke;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 7vw;
+    }
+    .title, .intro, .credit, .search {
+        margin-left: 0.9vw;
+    }
+    .title {
+        grid-row: 2 / 3;
+        grid-column: 1 / 6;
+        font-size: calc(20px + (26 - 10) * ((100vw - 300px) / (1600 - 300)));
+    }
+    .intro {
+        grid-row: 4 / 14;
+        grid-column: 1 / 7;
+        margin-bottom: 7vw;
+    }
+    .credit {
+        grid-row: 14 / 16;
+        grid-column: 1 / 6;
+        margin-bottom: 7vw;
+    }
+}
