@@ -1,0 +1,1 @@
+alert("This webpage was designed to be viewed in landscape mode")
