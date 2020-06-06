@@ -1,0 +1,81 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 55% 25% 5%;
+    grid-template-columns: 5% 45% 45% 5%;
+    grid-row-gap: 1%;
+    background-color: #081018;
+    font-family: 'Bellota Text', sans-serif;
+    color: white;
+    overflow-y: hidden;
+}
+div, .title {
+    background-color: #1e282e;
+}
+.title {
+    grid-row: 1 / 2;
+    grid-column: 2 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stock-tiles {
+    grid-row: 2 / 3;
+    grid-column: 2 / 4;
+    display: flex;
+}
+.stock-tiles div {
+    display: flex;
+    width: 21%;
+    padding: 2%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.stock-tiles div p {
+    font-size: 28px;
+}
+.stock-tiles div .quote {
+    font-size: 32px;
+}
+.user-tiles {
+    grid-row: 3 / 4;
+    grid-column: 2 / 4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+}
+.selected {
+    border: 4px solid gold;
+}
+.not-selected {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+@media screen and (min-width: 1580px) {
+    .stock-tiles div p {
+        font-size: 36px;
+    }
+    .stock-tiles div .quote {
+        font-size: 42px;
+    }
+    .user-tiles {
+        font-size: 30px;
+    }
+}
+@media screen and (min-width: 1900px) {
+    .stock-tiles div p {
+        font-size: 44px;
+    }
+    .stock-tiles div .quote {
+        font-size: 52px;
+    }
+    .user-tiles {
+        font-size: 32px;
+    }
+}
