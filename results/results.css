@@ -1,1 +1,37 @@
-
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #081018;
+    font-family: 'Bellota Text', sans-serif;
+    color: white;
+    overflow-y: hidden;
+    padding: 5% 20% 5% 20%;
+}
+div {
+    background-color: #1e282e;
+    height: 100%;
+    margin-bottom: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 2em;
+}
+h1 {
+    font-size: 4em;
+    font-weight: 300;
+}
+a {
+    background-color: white;
+    padding: 2vmax;
+    border-radius: 1vmax
+}
+#my-canvas {
+    height: 200px !important;
+    width: 100vw;
+}

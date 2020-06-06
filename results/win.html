@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' href='results.css'>
+        <title>You Win!</title>
+    </head>
+    <body>
+        <div class='display'>
+            <canvas id="my-canvas"></canvas>
+            <h1>You Win!</h1>
+            <h2>
+                <a href="../index.html">Play Again</a>
+            </h2>
+        </div>
+        <script src="../node_modules/confetti-js/dist/index.min.js"></script>
+        <script>
+            let confettiSettings = { target: 'my-canvas', clock: 40 };
+            let confetti = new ConfettiGenerator(confettiSettings);
+            confetti.render();
+        </script>
+    </body>
+</html>
