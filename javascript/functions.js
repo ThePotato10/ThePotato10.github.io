@@ -12,12 +12,12 @@ export function changeStockValue (selectedStock) {
         } else {
             selectedStock.trend = "minus";
             document.getElementById(selectedStock.document).style.color = '#fc1373';
-            return selectedStock.value -= (randomNumber + 4);
+            return selectedStock.value -= (randomNumber + 2);
         }
     } else {
-        if (plusOrMinus < 9) {
+        if (plusOrMinus <= 9) {
             document.getElementById(selectedStock.document).style.color = '#fc1373';
-            return selectedStock.value -= (randomNumber + 4);
+            return selectedStock.value -= (randomNumber + 2);
         } else {
             selectedStock.trend = "plus";
             document.getElementById(selectedStock.document).style.color = '#33cc73';
