@@ -3,15 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' href='welcome.css'>
         <title>Welcome!</title>
     </head>
     <body>
-        <h1>Stock Trader</h1>
-        <h3>A stock-tradin' gamblin' browser game</h3>
-        <p>Stock Trader is a browser game where you buy and sell shares of imaginary companies</p>
-        <p>Use the 'W' key to switch between stocks, the 'E' key to buy one share, and the 'D' key to buy 10. Use the 'I' key to sell one share, and the 'J' key to sell 10</p>
-        <h3>Have Fun!</h3>
-        <button onclick='startGame()'>Start</button>
+        <div class='title'>
+            <h1>Stock Trader</h1>
+            <h3>A stock-tradin' gamblin' browser game</h3>
+        </div>
+        <div class='controls'>
+            <p>Stock Trader is a browser game where you buy and sell shares of imaginary companies</p>
+            <p>Use the 'W' key to switch between stocks, the 'E' key to buy one share, and the 'D' key to buy 10. Use the 'I' key to sell one share, and the 'J' key to sell 10</p>
+        </div>
+        <div class='start'>
+            <h3>Have Fun!</h3>
+            <button onclick='startGame()'>Start</button>
+        </div>
         <script>
             function startGame () {
                 window.location.href = 'first.html'
