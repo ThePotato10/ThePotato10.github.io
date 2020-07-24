@@ -3,48 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Stock Trading Game</title>
-        <link rel='stylesheet' type='text/css' href='style.css'>
-        <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap" rel="stylesheet">
-        <script src='javascript/main.js' type='module'></script>
-        <script src='javascript/functions.js' type='module'></script>
-        <script src='javascript/stocks.js' type='module'></script>
+        <title>Welcome!</title>
     </head>
     <body>
-        <div class='title'>
-            <h1>Stocks Game</h1>
-        </div>
-        <div class='stock-tiles'>
-            <div class='selected' id='mego'>
-                <p>Mega Corporation</p>
-                <p class='quote' id='mega'></p>
-            </div>
-            <div class='not-selected' id='luno'>
-                <p>Luna Baking</p>
-                <p class='quote' id='luna'></p>
-            </div>
-            <div class='not-selected' id='alpho'>
-                <p>Alpha Computers</p>
-                <p class='quote' id='alpha'></p>
-            </div>
-            <div class='not-selected' id='canno'>
-                <p>Cannon Rocketry</p>
-                <p class='quote' id='cannon'></p>
-            </div>
-        </div>
-        <div class='user-tiles'>
-            <div class='money-tile'>
-                <p id='user-money'></p>
-                <p id='user-value'></p>
-            </div>
-            <div class='portfolio-tile'>
-                <ul>
-                    <li id='mega!'></li>
-                    <li id='luna!'></li>
-                    <li id='alpha!'></li>
-                    <li id='cann!'></li>
-                </ul>
-            </div>
-        </div>
+        <h1>Stock Trader</h1>
+        <h3>A stock-tradin' gamblin' browser game</h3>
+        <p>Stock Trader is a browser game where you buy and sell shares of imaginary companies</p>
+        <p>Use the 'W' key to switch between stocks, the 'E' key to buy one share, and the 'D' key to buy 10. Use the 'I' key to sell one share, and the 'J' key to sell 10</p>
+        <h3>Have Fun!</h3>
+        <button onclick='startGame()'>Start</button>
+        <script>
+            function startGame () {
+                window.location.href = 'first.html'
+            }
+        </script>
     </body>
 </html>
