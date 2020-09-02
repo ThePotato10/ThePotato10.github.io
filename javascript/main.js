@@ -24,6 +24,17 @@ function switchSelected () {
     }
 }
 
+function checkForAllBankrupt () {
+    let allBank = true;
+    for (let i = 0; i < stockArray.length; i++) {
+        let stock = stockArray[i];
+        if (stock.isBank === false) {
+            allBank = false;
+        }
+    }
+    return allBank;
+}
+
 function changeStock () {
     for (let i = 0; i < stockArray.length; i++) {
         let stock = stockArray[i];
@@ -43,6 +54,9 @@ function changeStock () {
         }
     }
     getValue();
+    if (checkForAllBankrupt() === true) {
+        //window.location.href = '../results/lose.html';
+    }
     clearInterval(timerRef);
     timerRef = setInterval(changeStock, 11500);
 }
