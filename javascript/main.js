@@ -2,8 +2,8 @@ import { stocks } from "./stocks.js";
 import { changeStockValue, buyStock, getValue, updateWealth, sellStock, getHighlight, getPortfolio } from "./functions.js";
 
 export let stockArray = [stocks.megaCorp, stocks.lunaBake, stocks.alphaComp, stocks.cannonRock];
-let chacha = 0;
-let selectedStock = stockArray[chacha];
+let currentSelectedStock = 0;
+let selectedStock = stockArray[currentSelectedStock];
 
 export let user = {
     money: 2000,
@@ -17,10 +17,10 @@ for (let i = 0; i < stockArray.length; i++) {
 }
 
 function switchSelected () {
-    if (chacha === (stockArray.length - 1)) {
-        chacha = 0;
+    if (currentSelectedStock === (stockArray.length - 1)) {
+        currentSelectedStock = 0;
     } else {
-        chacha++;
+        currentSelectedStock++;
     }
 }
 
@@ -36,7 +36,7 @@ function changeStock () {
         } else {
             document.getElementById(stock.document).innerHTML = 'Bankrupt';
             stock.value = 0;
-            chacha = 0;
+            currentSelectedStock = 0;
             stock.isBank = true;
             let bank = stockArray.indexOf(stock);
             stockArray.splice(bank, 1);
@@ -90,7 +90,7 @@ document.addEventListener('keydown', () => {
 document.addEventListener('keydown', () => {
     if (event.keyCode === 87) {
         switchSelected();
-        selectedStock = stockArray[chacha];
+        selectedStock = stockArray[currentSelectedStock];
         getHighlight(selectedStock);
     }
 })

@@ -36,7 +36,7 @@ export function getValue () {
     worth += alpha;
     worth += luna;
     worth += mega;
-    if (worth < 0) {
+    if (worth < 1200) {
         window.location.href = "../results/lose.html"
     } else if (worth > 7000) {
         window.location.href = "../results/win.html"
