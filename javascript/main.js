@@ -55,7 +55,7 @@ function changeStock () {
     }
     getValue();
     if (checkForAllBankrupt() === true) {
-        //window.location.href = '../results/lose.html';
+        window.location.href = '../results/lose.html';
     }
     clearInterval(timerRef);
     timerRef = setInterval(changeStock, 11500);
