@@ -1,0 +1,139 @@
+.method {
+    text-decoration: underline;
+}
+body {
+    background-color: #283044;
+    color: #FBF9FF;
+    font-family: 'Montserrat', sans-serif;
+    width: 100vw;
+    margin: 0;
+    padding: 0 10vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.intro {
+    margin: 0 auto;
+    text-align: center;
+    line-height: 3;
+    height: 100vh;
+}
+.main {
+    margin: 0 auto;
+    width: 80vw;
+}
+a {
+    color: #3CAFF5;
+}
+a:hover, a:visited {
+    color: #772adb
+}
+.items {
+    padding: 0 6%;
+    flex: 1;
+    display: flex;
+}
+
+@media screen and (orientation: landscape) {
+    .intro {
+        width: 60vw;
+    }
+    .intro h1 { font-size: 7vw }
+    .intro h3 { font-size: 2vw }
+    .year {
+        width: 50%;
+        margin: 2vw;
+        font-size: 1vw;
+        min-height: 15vh;
+        display: flex;
+    }
+    .items {
+        border-bottom: 2px solid #1A8FE3;
+    }
+    .vl {
+        height: 100%;
+        width: 0;
+        border-left: 2px solid #1A8FE3;
+        margin-right: 4vw;
+        box-sizing: content-box;
+    }
+    .projects {
+        margin: 0 auto;
+        width: 80vw;
+    }
+    .projects h2, .bottom h2 {
+        border-bottom: 2px solid #FBF9FF;
+        font-size: 1.5vw;
+    }
+    .flex-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .portfolio-item {
+        width: 30%;
+        margin: 3%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .portfolio-item img {
+        width: 100%;
+    }
+    
+    .bottom {
+        margin: 0 2.5%;
+        width: 45%;
+    }
+    .bottom .content {
+        display: flex;
+        justify-content: space-around;
+    }
+    a {
+        font-size: 0.9vw;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .intro {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .intro h1 { font-size: 5vmax }
+    .intro h3 { font-size: 2vmax }
+    .year {
+        width: 100%;
+        margin: 2vw;
+        min-height: 15vh;
+    }
+    .items {
+        border-top: 2px solid #1A8FE3;
+    }
+    .projects {
+        margin: 0 auto;
+        width: 80vw;
+    }
+    .projects h2, .bottom h2 {
+        border-bottom: 2px solid #FBF9FF;
+    }
+    .portfolio-item {
+        width: 100%;
+        margin: 3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .portfolio-item img {
+        width: 100%;
+    }
+    .bottom-container {
+        flex-direction: column;
+    }
+    .bottom {
+        margin: 2.5% 0;
+        width: 100%;
+    }
+}
