@@ -37,9 +37,9 @@ export function getValue () {
     worth += luna;
     worth += mega;
     if (worth < 1200) {
-        window.location.href = "../results/lose.html"
+        window.location.href = "/stocks-game/results/lose.html"
     } else if (worth > 7000) {
-        window.location.href = "../results/win.html"
+        window.location.href = "/stocks-game/results/win.html"
     } else {
         user.value = worth;
         updateWealth();
