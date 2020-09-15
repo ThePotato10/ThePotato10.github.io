@@ -1,2 +1,1 @@
 1. Refactor CSS
-2. Add contact widget
