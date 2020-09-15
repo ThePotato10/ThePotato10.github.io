@@ -69,9 +69,8 @@ a:hover, a:visited {
         flex-wrap: wrap;
     }
     .portfolio-item {
-        width: 30%;
+        width: 26%;
         margin: 3%;
-        flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
