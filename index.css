@@ -91,6 +91,11 @@ a:hover, a:visited {
     a {
         font-size: 0.9vw;
     }
+    .list-header {
+        font-size: 1.45vw;
+        text-decoration: underline;
+        margin-bottom: 2vh;
+    }
 }
 
 @media screen and (orientation: portrait) {
@@ -134,5 +139,10 @@ a:hover, a:visited {
     .bottom {
         margin: 2.5% 0;
         width: 100%;
+    }
+    .list-header {
+        font-size: 4vh;
+        text-decoration: underline;
+        margin-bottom: 2vh;
     }
 }
