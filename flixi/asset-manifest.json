@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/flixi/static/css/main.9c5a225b.chunk.css",
+    "main.css": "/flixi/static/css/main.20d03479.chunk.css",
     "main.js": "/flixi/static/js/main.fb1517e9.chunk.js",
     "main.js.map": "/flixi/static/js/main.fb1517e9.chunk.js.map",
     "runtime-main.js": "/flixi/static/js/runtime-main.6b53591c.js",
@@ -8,13 +8,13 @@
     "static/js/2.c2327b46.chunk.js": "/flixi/static/js/2.c2327b46.chunk.js",
     "static/js/2.c2327b46.chunk.js.map": "/flixi/static/js/2.c2327b46.chunk.js.map",
     "index.html": "/flixi/index.html",
-    "static/css/main.9c5a225b.chunk.css.map": "/flixi/static/css/main.9c5a225b.chunk.css.map",
+    "static/css/main.20d03479.chunk.css.map": "/flixi/static/css/main.20d03479.chunk.css.map",
     "static/js/2.c2327b46.chunk.js.LICENSE.txt": "/flixi/static/js/2.c2327b46.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6b53591c.js",
     "static/js/2.c2327b46.chunk.js",
-    "static/css/main.9c5a225b.chunk.css",
+    "static/css/main.20d03479.chunk.css",
     "static/js/main.fb1517e9.chunk.js"
   ]
 }
