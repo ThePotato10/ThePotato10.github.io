@@ -4,6 +4,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
 @media screen and (orientation: landscape) {
+    .mobile-only {
+        display: none;
+    }
+    
     body {
         width: 100vw;
         margin: 0;
@@ -97,5 +101,65 @@
         from {
             width: 0%
         }
+    }
+}
+
+@media screen and (orientation: portrait) {
+    body {
+        font-family: 'PT Sans', sans-serif;
+        margin: 0;
+    }
+    
+    .editor {
+        display: none;
+    }
+
+    .bio {
+        padding: 20px;
+        line-height: 2;
+    }
+
+    .bio h1 {
+        text-align: center;
+        line-height: normal;
+    }
+
+    header {
+        width: 100vw;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 20%;
+        background-color: #282a39;
+    }
+
+    header a {
+        color: white;
+        margin: 10px;
+    }
+
+    header i {
+        cursor: pointer;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .projects {
+        width: 100vw;
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .projects .header {
+        font-size: calc(2vh + 8px);
+        font-weight: 800;
     }
 }
