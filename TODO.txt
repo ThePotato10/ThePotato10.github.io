@@ -1,2 +1,0 @@
-1. Refactor index.css
-2. Add mobile support for pin.css

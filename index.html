@@ -4,117 +4,71 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link type='text/css' rel='stylesheet' href='index.css'>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
+        <link type="text/css" rel="stylesheet" href="colors.css">
         <title>My Portfolio</title>
     </head>
     <body>
-        <div class='intro'>
-            <h1>Hello!</h1>
-            <h3>My name's JD Peppelman</h3>
-            <h3>I've been programming since I was 12</h3>
-        </div>
-        <div class='main'>
-            <div class='year' id='year-12'>
-                <h2>12 Years Old</h2>
-                <div class='items'>
-                    <div class='vl'></div>
-                    <div>
-                        <p> - I got my first computer, a crappy chromebook</p>
-                        <p> - I started teaching myself the fundamentals of HTML and CSS</p>
-                        <p> - I began teaching myself basic JavaScript, which I found damn hard</p>
-                    </div>
-                </div>
+        <aside class="editor">
+            <div>
+<span class="code-purple">import</span> <span class="code-red">bcrypt</span> <span class="code-purple">from</span> <span class="code-green">'bcrypt'</span>;
+<span class="code-purple">import</span> { <span class="code-red">Router</span> } <span class="code-purple">from</span> <span class="code-green">'express'</span>;
+<span class="code-purple">import</span> { <span class="code-red">MongoClient</span> } <span class="code-purple">from</span> <span class="code-green">'mongodb'</span>;
+
+<span class="code-purple">export const</span> <span class='code-pink'>auth</span> = <span class="code-blue">Router</span>();
+
+<span class="code-red">auth</span>.<span class='code-blue'>post</span>(<span class='code-green'>"/login"</span>, <span class='code-purple'>async</span> (<span class="code-red">req</span>, <span class="code-red">res</span>)<span class="code-purple"> =></span> {
+    <span class="code-purple">const</span> <span class="code-pink">client</span> = <span class="code-purple">new</span> <span class="code-pink">MongoClient</span>(<span class="code-turq">require</span>(<span class="code-green">'../../credentials'</span>), <span class="code-red">options</span>);
+    <span class="code-purple">await</span> <span class="code-red">client</span>.<span class="code-blue">connect</span>();
+
+    <span class="code-purple">const</span> <span class="code-pink">user</span> = <span class="code-purple">await</span> <span class="code-red">client</span>.<span class="code-blue">db</span>(<span class="code-green">"rantisse"</span>)
+        .<span class="code-blue">collection</span>(<span class="code-green">"users"</span>)
+        .<span class="code-blue">findOne</span>({ <span class="code-red">$or</span> [
+            { <span class="code-red">email</span>: <span class="code-red">req</span>.<span class="code-red">body</span>.<span class="code-red">username</span> }, { <span class="code-red">username</span>: <span class="code-red">req</span>.<span class="code-red">body</span>.<span class="code-red">username</span> }
+        ] });
+
+    <span class="code-purple">if</span> (<span class="code-red">user</span>) {
+        <span class="code-red">bcrypt</span>.<span class="code-blue">compare</span>(<span class="code-red">req</span>.<span class="code-red">body</span>.<span class="code-red">password</span>, <span class="code-red">user</span>.<span class="code-red">password</span>, <span class="code-purple">function</span>(<span class="code-red">err</span>, <span class="code-red">result</span>) {
+            <span class="code-purple">if</span> (<span class="code-red">err</span>) {
+                <span class="code-red">res</span>.<span class="code-blue">status</span>(<span class="code-orange">500</span>).<span class="code-blue">send</span>({ <span class="code-red">error</span>: <span class="code-orange">true</span>, <span class="code-red">message</span>: <span class="code-green">"Internal Server Error, please try again"</span> });
+            } <span class="code-purple">else</span> {
+                <span class="code-purple">if</span> (<span class="code-red">result</span>) {
+                    <span class="code-red">console</span>.<span class="code-blue">log</span>(<span class="code-green">`User with id </span><span class="code-pink">${</span><span class="code-red">user</span>.<span class="code-red">_id</span>.<span class="code-blue">toString</span>()<span class="code-pink">}</span> <span class="code-green">logged in`</span>);   
+
+                    <span class="code-red">res</span>.<span class="code-blue">cookie</span>(<span class="code-green">"uidtoken"</span>, <span class="code-red">user</span>.<span class="code-red">_id</span>.<span class="code-blue">toString</span>(), { <span class="code-red">httpOnly</span>: <span class="code-orange">true</span>, <span class="code-red">maxAge</span>: <span class="code-orange">99999999</span>, <span class="code-red">sameSite</span>: <span class="code-orange">true</span> });
+                    <span class="code-red">res</span>.<span class="code-blue">send</span>({ <span class="code-red">error</span>: <span class="code-orange">false</span>, <span class="code-red">message</span>: <span class="code-green">"ok"</span> });
+                } <span class="code-purple">else</span> {
+                    <span class="code-red">res</span>.<span class="code-blue">status</span>(<span class="code-orange">401</span>).<span class="code-blue">send</span>({ <span class="code-red">error</span>: <span class="code-orange">true</span>, <span class="code-red">message</span>: <span class="code-green">"Password is incorrect"</span> });
+                }
+            }
+        });
+    } <span class="code-purple">else</span> {
+        <span class="code-red">res</span>.<span class="code-blue">status</span>(<span class="code-orange">401</span>).<span class="code-blue">send</span>({ <span class="code-red">error</span>: <span class="code-orange">true</span>, <span class="code-red">message</span>: <span class="code-green">"Username or email not found"</span> });
+    }
+
+    <span class="code-red">client</span>.<span class="code-blue">close</span>();
+});</div>
+        </aside>
+
+        <main class="bio">
+            <h1>My name is JD Peppelman</h1>
+            <p>I'm an experienced self-taught web developer. I wrote my first website when I was 12, typing away inside Text on a crappy Chromebook.</p>
+            <p>Since then, I've written enterprise grade websites and webapps in modern technologies like React and Vue. I've used Typescript extensively since version 2. Working by myself because of the pandemic, I was quickly forced to become a full-stack developer, and I'm now experienced in Nodejs, Deno, C#, and Python. Working around the limitations of the crappy chromebook, I had to learn to use Linux to install any useful apps. It's now my daily driver, and I have nearly a years experience with it in desktop and server environments. Since I can't afford servers, I had to learn to use platforms like AWS and Heroku, and technologies like Docker.</p>
+            <p>In addition to building apps, I've dived deep into the science behind computers, studying mathematical ideas like Lambda Calculus and Discrete Mathematics and Computer Science ideas like Big-O notation and various algorithms, from basic to more advanced, like Insertion Sort and Huffman Coding.</p>
+            <p>There is nothing I love more in the world than creative problem solving and building cool shit. It's what I've loved since the start, and hardly a day has gone by without me booting up VSCode.</p>
+        </main>
+
+        <article class="projects">
+            <h1>Projects</h1>
+            <div>
+                <p class="header">AWS is too expensive :/</p>
+                <p>For now, check out <a href="https://github.com/thepotato10">my GitHub</a> for the things I make</p>
             </div>
-            <div class='year' id='year-13'>
-                <h2>13 Years Old</h2>
-                <div class='items'>
-                    <div class='vl'></div>
-                    <div>
-                        <p> - I enabled Linux apps on said crappy chromebook, and installed VSCode</p>
-                        <p> - I taught myself more advanced JavaScript and CSS</p>
-                        <p> - I built my first published website, <a href='stocks-game/index.html'>a basic stock trading game</a></p>
-                        <p> - I learned React, and started playing around with that. It's still my favorite js framework</p>
-                        <p> - I built my first app with a backend, and in the process taught myself Nodejs</p>
-                        <p> - I got my first real computer, and immediately started using Ubuntu</p>
-                        <p> - I taught myself the fundamentals of Python</p>
-                        <p> - I learned some Java</p>
-                        <p> - I build a small raspberry pi robot</p>
-                        <p> - I taught myself the basics of PHP</p>
-                        <p> - I switched my laptop to Manjaro, personally my favorite OS</p>
-                    </div>
-                </div>
-            </div>
-            <div class='year' id='year-14'>
-                <h2>14 Years Old</h2>
-                <div class='items'>
-                    <div class='vl'></div>
-                    <div>
-                        <p> - I worked as the webmaster for my school's PTSA website</p>
-                        <p> - I started using Typescript in actual projects</p>
-                        <p> - I made my first PR in Github, adding a dark theme for a browser text editor</p>
-                        <p> - I built my first app with a Python backend, a simple login system that hashes and salts passwords</p>
-                        <p> - I developed my first app with an .NET Core/C# backend</p>
-                        <p> - I installed Arch Linux first try on my PC, before realizing I kinda hated and so I switched back to Manjaro<p>
-                        <p> - I got a Raspberry Pi module kit for Christmas and began playing around with more advanced hardware</p>
-                        <p> - I started exploring more mathematical computational ideas, like the fundamentals of Discrete Mathematics and Lambda Calculus</p>
-                        <p> - I built a proof-of-concept Huffman Coding compression algorithm in pure Python. <a href='https://github.com/ThePotato10/huffman-coding'>Source code here</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class='projects'>
-            <h2>My Portfolio</h2>
-            <div class='flex-wrapper'>
-                <div class='portfolio-item'>
-                    <img src='images/stocks.png'>
-                    <h3><a href='stocks-game'>Stock Trading Game</a></h3>
-                </div>
-                <div class='portfolio-item'>
-                    <img src='images/weather.png'>
-                    <h3><a href='https://poolday36567.github.io'>Weather Webapp</a></h3>
-                </div>
-                <div class='portfolio-item'>
-                    <img src='images/chatty.png'>
-                    <h3><a href='https://github.com/ThePotato10/chatty'>Chatty Chat App</a></h3>
-                </div>
-                <div class='portfolio-item'>
-                    <img src='images/noimage.png'>
-                    <h3><a href='nodewatch'>NodeWatch</a></h3>
-                </div>
-                <div class='portfolio-item'>
-                    <img src='images/loading.png'>
-                    <h3><a href='loading'>Loading Animation</a></h3>
-                </div>
-            </div>
-        </div>
-        <div class='bottom-container' style='display: flex; margin-bottom: 10vh'>
-            <div class='bottom'>
-                <h2>Skills</h2>
-                <div class='content'>
-                    <ul>
-                        <li class='list-header'>Experienced With:</li>
-                        <li>CSS</li>
-                        <li>SASS and SCSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Nodejs & Express</li>
-                        <li>Linux</li>
-                        <li>Git & Github</li>
-                        <li>TypeScript</li>
-                        <li>Python</li>
-                    </ul>
-                    <ul>
-                        <li class='list-header'>Familiar With:</li>
-                        <li>Dart</li>
-                        <li>Java</li>
-                        <li>C# and .NET</li>
-                        <li>Docker and basic DevOps</li>
-                        <li>AWS</li>
-                        <li>SQL</li>
-                        <li>MongoDB</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        </article>
+
+        <footer>
+            <a href="https://github.com/thepotato10"><i class="bi bi-github"></i></a>
+            <a href="https://www.instagram.com/jdpeppelman/"><i class="bi bi-instagram"></i></a>
+            <a href="mailto:jd.dev10@gmail.com"><i class="bi bi-envelope"></i></a>
+        </footer>
     </body>
 </html>
