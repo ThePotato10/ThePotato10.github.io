@@ -150,7 +150,7 @@ const toggleScore = () => {
         document.body.style.overflowY = "hidden";
         
         let score = questions.filter(question => question.checked).reduce((acc, curr) => acc + curr.value, 0);
-        document.querySelector(".score-container").textContent = `You Scored ${score}`;
+        document.querySelector(".score-container").textContent = `You Scored ${100 - Math.floor(score * 0.209643605870021)}`;
     } else {
         document.querySelector(".overlay").style.display = "none";
         document.body.style.overflowY = "scroll";
