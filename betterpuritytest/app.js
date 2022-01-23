@@ -30,7 +30,7 @@ class Question {
         document.querySelector(".question-wrapper").innerHTML += `
         <div id=${this.id} class="question" onclick="toggleCheck('${this.id}')">
             <span class="check-indicator"></span>
-            <span>${this.number}. ${this.text}</span>
+            <span class="text">${this.number}. ${this.text}</span>
         </div>`;
     }
 }

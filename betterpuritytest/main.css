@@ -10,6 +10,9 @@ body {
     margin: 10px auto;
     max-width: 600px;
     width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .question {
@@ -34,6 +37,10 @@ body {
     border-radius: 50%;
     border: 1px solid #3F84E5;
     margin-right: 20px;
+}
+
+.question .text {
+    width: 80%;
 }
 
 .question.checked .check-indicator {
