@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh
+            }
+
+            p,b {
+                font-size: 32px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+            b {
+                color: #7428d8
+            }
+        </style>
+
+        <title>Rustify Auth</title>
+    </head>
+    <body>
+        <p>Copy the code shown below into Rustify to authorize the app</p>
+        <b id="code"></b>
+    </body>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+
+        document.querySelector("#code").innerHTML = code;
+    </script>
+</html>
