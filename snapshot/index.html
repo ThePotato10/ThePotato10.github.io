@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>All the World</title>
+
+        <script src="https://unpkg.com/color.js@1.2.0/dist/color.js"></script>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <p>This is a visual representation of a snapshot of our world. Every 10 seconds, this program pulls the location data of the ISS, the temperature at one of Earth's major cities, a random photo from the internet, and the financial data about a random stock. It then plots a point where the location represents the location of the ISS, the size corresponds to the temperature, the color is the average color of the photo, and how fast it grows or shrinks relates to the performance of the stock. It captures a truly random snapshot of our world, one that represents a little of everything in modern life in just a dot on your screen.</p>
+        <canvas id="canvas" style="border: 1px solid black"></canvas>
+        <div id="image-holder" style="visibility: hidden; height: 0;"></div>
+    </body>
+</html>

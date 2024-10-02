@@ -1,76 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type='text/css' rel='stylesheet' href='index.css'>
-        <link type="text/css" rel="stylesheet" href="colors.css">
-        <title>My Portfolio</title>
-    </head>
-    <body>
-        <header class="mobile-only">
-            <a href="https://github.com/thepotato10"><i class="bi bi-github"></i></a>
-            <a href="https://www.instagram.com/jdpeppelman/"><i class="bi bi-instagram"></i></a>
-            <a href="mailto:jd.dev10@gmail.com"><i class="bi bi-envelope"></i></a>
-        </header>
 
-        <aside class="editor">
-            <div>
-<span class="code-purple">import</span> <span class="code-red">bcrypt</span> <span class="code-purple">from</span> <span class="code-green">'bcrypt'</span>;
-<span class="code-purple">import</span> { <span class="code-red">Router</span> } <span class="code-purple">from</span> <span class="code-green">'express'</span>;
-<span class="code-purple">import</span> { <span class="code-red">MongoClient</span> } <span class="code-purple">from</span> <span class="code-green">'mongodb'</span>;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<span class="code-purple">export const</span> <span class='code-pink'>auth</span> = <span class="code-blue">Router</span>();
+    <link rel="stylesheet" href="/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<span class="code-red">auth</span>.<span class='code-blue'>post</span>(<span class='code-green'>"/login"</span>, <span class='code-purple'>async</span> (<span class="code-red">req</span>, <span class="code-red">res</span>)<span class="code-purple"> =></span> {
-    <span class="code-purple">const</span> <span class="code-pink">client</span> = <span class="code-purple">new</span> <span class="code-pink">MongoClient</span>(<span class="code-turq">require</span>(<span class="code-green">'../../credentials'</span>), <span class="code-red">options</span>);
-    <span class="code-purple">await</span> <span class="code-red">client</span>.<span class="code-blue">connect</span>();
+    <title>ThePotato10</title>
+</head>
 
-    <span class="code-purple">const</span> <span class="code-pink">user</span> = <span class="code-purple">await</span> <span class="code-red">client</span>.<span class="code-blue">db</span>(<span class="code-green">"rantisse"</span>)
-        .<span class="code-blue">collection</span>(<span class="code-green">"users"</span>)
-        .<span class="code-blue">findOne</span>({ <span class="code-red">$or</span> [
-            { <span class="code-red">email</span>: <span class="code-red">req</span>.<span class="code-red">body</span>.<span class="code-red">username</span> }, { <span class="code-red">username</span>: <span class="code-red">req</span>.<span class="code-red">body</span>.<span class="code-red">username</span> }
-        ] });
+<body>
 
-    <span class="code-purple">if</span> (<span class="code-red">user</span>) {
-        <span class="code-red">bcrypt</span>.<span class="code-blue">compare</span>(<span class="code-red">req</span>.<span class="code-red">body</span>.<span class="code-red">password</span>, <span class="code-red">user</span>.<span class="code-red">password</span>, <span class="code-purple">function</span>(<span class="code-red">err</span>, <span class="code-red">result</span>) {
-            <span class="code-purple">if</span> (<span class="code-red">err</span>) {
-                <span class="code-red">res</span>.<span class="code-blue">status</span>(<span class="code-orange">500</span>).<span class="code-blue">send</span>({ <span class="code-red">error</span>: <span class="code-orange">true</span>, <span class="code-red">message</span>: <span class="code-green">"Internal Server Error, please try again"</span> });
-            } <span class="code-purple">else</span> {
-                <span class="code-purple">if</span> (<span class="code-red">result</span>) {
-                    <span class="code-red">console</span>.<span class="code-blue">log</span>(<span class="code-green">`User with id </span><span class="code-pink">${</span><span class="code-red">user</span>.<span class="code-red">_id</span>.<span class="code-blue">toString</span>()<span class="code-pink">}</span> <span class="code-green">logged in`</span>);   
-
-                    <span class="code-red">res</span>.<span class="code-blue">cookie</span>(<span class="code-green">"uidtoken"</span>, <span class="code-red">user</span>.<span class="code-red">_id</span>.<span class="code-blue">toString</span>(), { <span class="code-red">httpOnly</span>: <span class="code-orange">true</span>, <span class="code-red">maxAge</span>: <span class="code-orange">99999999</span>, <span class="code-red">sameSite</span>: <span class="code-orange">true</span> });
-                    <span class="code-red">res</span>.<span class="code-blue">send</span>({ <span class="code-red">error</span>: <span class="code-orange">false</span>, <span class="code-red">message</span>: <span class="code-green">"ok"</span> });
-                } <span class="code-purple">else</span> {
-                    <span class="code-red">res</span>.<span class="code-blue">status</span>(<span class="code-orange">401</span>).<span class="code-blue">send</span>({ <span class="code-red">error</span>: <span class="code-orange">true</span>, <span class="code-red">message</span>: <span class="code-green">"Password is incorrect"</span> });
-                }
-            }
-        });
-    } <span class="code-purple">else</span> {
-        <span class="code-red">res</span>.<span class="code-blue">status</span>(<span class="code-orange">401</span>).<span class="code-blue">send</span>({ <span class="code-red">error</span>: <span class="code-orange">true</span>, <span class="code-red">message</span>: <span class="code-green">"Username or email not found"</span> });
-    }
-
-    <span class="code-red">client</span>.<span class="code-blue">close</span>();
-});</div>
-        </aside>
-
-        <main class="bio">
-            <h1>Coming Soon ... </h1>
-        </main>
-
-        <article class="projects">
-            <h1>Projects</h1>
-            <div>
-                <p class="header">AWS is too expensive :/</p>
-                <p>For now, check out <a href="https://github.com/thepotato10">my GitHub</a> for the things I make</p>
+    <h1>Portfolio • JD Peppelman</h1>
+    <div class="main" id="main">
+        <div class="scrollbox" id="scrollbox2">
+            <h3>Web Projects</h3>
+            <div class="card"
+                onmouseenter="typeIn(this, 'Art created from the random phenomena of the world. Coming soon', 30)">
+                <a href="/snapshot/soon.html"><div class="display-content">Snapshot</div></a>
+                <div class="hover-content">Art created from the random phenomena of the world. Coming soon</div>
             </div>
-        </article>
+            <div class="card" onmouseenter="typeIn(this, 'Experiment in automated art', 50)">
+                <a href="/thewindow/"><div class="display-content">The Window</div></a>
+                <div class="hover-content"></div>
+            </div>
+            <div class="card" onmouseenter="typeIn(this, 'Space Invaders inspired game created with PIXI.js', 35)">
+                <a href="/stardefense/"><div class="display-content">Star Defense</div></a>
+                <div class="hover-content">Space Invaders inspired game created with PIXI.js</div>
+            </div>
+        </div>
+        <div class="scrollbox" id="scrollbox3">
+            <h3>Other Projects</h3>
+            <div class="card" onmouseenter="typeIn(this, 'Command line spotify client. Coming soon', 40)">
+                <a href="/rustify/rustify.html"><div class="display-content">Rustify</div></a>
+                <div class="hover-content">Command line spotify client. Coming soon</div>
+            </div>
+            <div class="card"
+                onmouseenter="typeIn(this, 'Data about the correlations between different race specialties in swimming', 25)">
+                <a href="/swim-statistics/"><div class="display-content">Swim Statistics</div></a>
+                <div class="hover-content"></div>
+            </div>
+            <div class="card"
+                onmouseenter="typeIn(this, 'Online notes written in LaTeX for my Multivariable Calc/Differential Equations class', 20)">
+                <a href="https://github.com/ThePotato10/multivariable-notes"><div class="display-content">Multivariable Notes</div></a>
+                <div class="hover-content"></div>
+            </div>
+        </div>
+        <div class="scrollbox">
+            <h3>Links</h3>
+            <div class="card" onmouseenter="typeIn(this, 'Instagram', 100)">
+                <a href="https://www.instagram.com/jd.peppelman"><div class="display-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                    </svg>
+                </div></a>
+                <div class="hover-content"></div>
+            </div>
+            <div class="card"
+                onmouseenter="typeIn(this, 'Github. Repository for various programming projects. Nerd shit', 30)">
+                <a href="https://github.com/ThePotato10"><div class="display-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                    </svg>
+                </div></a>
+                <div class="hover-content"></div>
+            </div>
+        </div>
+    </div>
 
-        <footer>
-            <a href="https://github.com/thepotato10"><i class="bi bi-github"></i></a>
-            <a href="https://www.instagram.com/jdpeppelman/"><i class="bi bi-instagram"></i></a>
-            <a href="mailto:jd.dev10@gmail.com"><i class="bi bi-envelope"></i></a>
-        </footer>
-    </body>
+    <div class="bio">
+        <p>I got my first personal computer for Christmas when I was 12. It was a underpowered chromebook, but, using
+            Codecademy and the built in text editor, I started to build my own websites. After that winter
+            break was over, I stopped and I didn't really start again until COVID hit. While I was forced inside for
+            a few months, I taught myself JavaScript and Python, and I've been coding ever since. I learned to love the feeling 
+            of problem solving and slowly seeing a project come together. I realized that this was my passion, and something I 
+            wanted to do for the rest of my life. </p>
+    </div>
+
+    <script>
+        function typeIn(container, text, speed) {
+            let textbox = container.children[1];
+            textbox.innerHTML = "";
+
+            let content = "";
+            let contentIndex = 0;
+
+            let intervalId = setInterval(() => {
+                content += text.substring(contentIndex, contentIndex + 1);
+                contentIndex++;
+
+                textbox.innerHTML = content;
+            }, speed);
+
+            setTimeout(function () { clearInterval(intervalId) }, 2000);
+        }
+    </script>
+</body>
+
 </html>
