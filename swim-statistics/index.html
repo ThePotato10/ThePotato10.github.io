@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/swim-statistics/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+        <title>Swimming Race Correlation Statistics</title>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Swimming Race Correlation Statistics</h1>
+            <p>I was curious about which swim events were the most closely correlated after some teammates and I had a debate about 
+                the weirdest specialty combo (I thought it was sprint free and 200 back). So I scraped some data from Swimcloud and 
+                ran the numbers. I pulled my numbers from the top ranked male swimmers in the class of 2025 on Swimcloud, and ended 
+                up with a sample size of n=1063. I then categorized these swimmers by their best event, and counted the number of 
+                occurances of an event in their 2nd-4th best events. Divide this by the total number of swimmers with that best 
+                event, and you have the correlations. The scripts I used to collect the data and create the correlations can be found <a href="https://github.com/ThePotato10/swim-statistic/">here</a>.
+            </p>
+            <p>The most surprising data I found was 100 back/100 breast, which has no overlap at all, despite both of those being sprint 
+                events. Also, there's not a single top ranked swimmer who's good at both sprint and distance free, which I found 
+                surprising, because I figured at least one swimmer would be something of an all purpose freestyler.
+            </p>
+            <p>To answer the question, though, the weirdest specialty combo that does exist is the 100 breast best event + 1000 free as another good event. These are not 
+                only the two most different styles of swimming, but one is a complete sprint and the other is pure distance, making this
+                a really strange combination. Only one swimmer had this combo, and I think he, whoever he is, deserves the crown for 
+                weirdest specialty combo in swimming
+            </p>
+            <h2>Search for an event to see it's data</h2>
+
+            <div class="search-container">
+                <input id="search" type="text" placeholder="Enter an event">
+                <button onclick="search()">Search</button>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Events</td>
+                            <td>Correlation</td>
+                        </tr>
+                    </thead>
+                    <tbody id="table">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>

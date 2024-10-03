@@ -1,0 +1,730 @@
+[
+    {
+        "events": "50 Free-100 Free",
+        "score": 9559
+    },
+    {
+        "events": "50 Free-200 Free",
+        "score": 6102.999999999999
+    },
+    {
+        "events": "50 Free-500 Free",
+        "score": 1103
+    },
+    {
+        "events": "50 Free-1000 Free",
+        "score": 0
+    },
+    {
+        "events": "50 Free-1650 Free",
+        "score": 0
+    },
+    {
+        "events": "50 Free-100 Back",
+        "score": 2721
+    },
+    {
+        "events": "50 Free-200 Back",
+        "score": 294
+    },
+    {
+        "events": "50 Free-100 Breast",
+        "score": 2353
+    },
+    {
+        "events": "50 Free-200 Breast",
+        "score": 221.00000000000003
+    },
+    {
+        "events": "50 Free-100 Fly",
+        "score": 5147.000000000001
+    },
+    {
+        "events": "50 Free-200 Fly",
+        "score": 515
+    },
+    {
+        "events": "50 Free-200 IM",
+        "score": 1838
+    },
+    {
+        "events": "50 Free-400 IM",
+        "score": 147
+    },
+    {
+        "events": "100 Free-50 Free",
+        "score": 9231
+    },
+    {
+        "events": "100 Free-200 Free",
+        "score": 8269
+    },
+    {
+        "events": "100 Free-500 Free",
+        "score": 2308
+    },
+    {
+        "events": "100 Free-1000 Free",
+        "score": 95.99999999999999
+    },
+    {
+        "events": "100 Free-1650 Free",
+        "score": 0
+    },
+    {
+        "events": "100 Free-100 Back",
+        "score": 1731
+    },
+    {
+        "events": "100 Free-200 Back",
+        "score": 480.99999999999994
+    },
+    {
+        "events": "100 Free-100 Breast",
+        "score": 1250
+    },
+    {
+        "events": "100 Free-200 Breast",
+        "score": 95.99999999999999
+    },
+    {
+        "events": "100 Free-100 Fly",
+        "score": 4519
+    },
+    {
+        "events": "100 Free-200 Fly",
+        "score": 673
+    },
+    {
+        "events": "100 Free-200 IM",
+        "score": 1250
+    },
+    {
+        "events": "100 Free-400 IM",
+        "score": 95.99999999999999
+    },
+    {
+        "events": "200 Free-50 Free",
+        "score": 4960
+    },
+    {
+        "events": "200 Free-100 Free",
+        "score": 7440
+    },
+    {
+        "events": "200 Free-500 Free",
+        "score": 6480
+    },
+    {
+        "events": "200 Free-1000 Free",
+        "score": 880
+    },
+    {
+        "events": "200 Free-1650 Free",
+        "score": 720
+    },
+    {
+        "events": "200 Free-100 Back",
+        "score": 1440
+    },
+    {
+        "events": "200 Free-200 Back",
+        "score": 1120
+    },
+    {
+        "events": "200 Free-100 Breast",
+        "score": 480
+    },
+    {
+        "events": "200 Free-200 Breast",
+        "score": 160
+    },
+    {
+        "events": "200 Free-100 Fly",
+        "score": 1680
+    },
+    {
+        "events": "200 Free-200 Fly",
+        "score": 1440
+    },
+    {
+        "events": "200 Free-200 IM",
+        "score": 1760
+    },
+    {
+        "events": "200 Free-400 IM",
+        "score": 1440
+    },
+    {
+        "events": "500 Free-50 Free",
+        "score": 680
+    },
+    {
+        "events": "500 Free-100 Free",
+        "score": 3010
+    },
+    {
+        "events": "500 Free-200 Free",
+        "score": 8350
+    },
+    {
+        "events": "500 Free-1000 Free",
+        "score": 5825
+    },
+    {
+        "events": "500 Free-1650 Free",
+        "score": 4854
+    },
+    {
+        "events": "500 Free-100 Back",
+        "score": 388
+    },
+    {
+        "events": "500 Free-200 Back",
+        "score": 971.0000000000001
+    },
+    {
+        "events": "500 Free-100 Breast",
+        "score": 291
+    },
+    {
+        "events": "500 Free-200 Breast",
+        "score": 194
+    },
+    {
+        "events": "500 Free-100 Fly",
+        "score": 291
+    },
+    {
+        "events": "500 Free-200 Fly",
+        "score": 1359
+    },
+    {
+        "events": "500 Free-200 IM",
+        "score": 1262
+    },
+    {
+        "events": "500 Free-400 IM",
+        "score": 2524
+    },
+    {
+        "events": "1000 Free-50 Free",
+        "score": 0
+    },
+    {
+        "events": "1000 Free-100 Free",
+        "score": 278
+    },
+    {
+        "events": "1000 Free-200 Free",
+        "score": 4722
+    },
+    {
+        "events": "1000 Free-500 Free",
+        "score": 10000
+    },
+    {
+        "events": "1000 Free-1650 Free",
+        "score": 8889
+    },
+    {
+        "events": "1000 Free-100 Back",
+        "score": 0
+    },
+    {
+        "events": "1000 Free-200 Back",
+        "score": 278
+    },
+    {
+        "events": "1000 Free-100 Breast",
+        "score": 0
+    },
+    {
+        "events": "1000 Free-200 Breast",
+        "score": 278
+    },
+    {
+        "events": "1000 Free-100 Fly",
+        "score": 278
+    },
+    {
+        "events": "1000 Free-200 Fly",
+        "score": 556
+    },
+    {
+        "events": "1000 Free-200 IM",
+        "score": 0
+    },
+    {
+        "events": "1000 Free-400 IM",
+        "score": 4722
+    },
+    {
+        "events": "1650 Free-50 Free",
+        "score": 0
+    },
+    {
+        "events": "1650 Free-100 Free",
+        "score": 0
+    },
+    {
+        "events": "1650 Free-200 Free",
+        "score": 4419
+    },
+    {
+        "events": "1650 Free-500 Free",
+        "score": 9767
+    },
+    {
+        "events": "1650 Free-1000 Free",
+        "score": 9302
+    },
+    {
+        "events": "1650 Free-100 Back",
+        "score": 0
+    },
+    {
+        "events": "1650 Free-200 Back",
+        "score": 1163
+    },
+    {
+        "events": "1650 Free-100 Breast",
+        "score": 465
+    },
+    {
+        "events": "1650 Free-200 Breast",
+        "score": 0
+    },
+    {
+        "events": "1650 Free-100 Fly",
+        "score": 0
+    },
+    {
+        "events": "1650 Free-200 Fly",
+        "score": 930
+    },
+    {
+        "events": "1650 Free-200 IM",
+        "score": 698
+    },
+    {
+        "events": "1650 Free-400 IM",
+        "score": 3256
+    },
+    {
+        "events": "100 Back-50 Free",
+        "score": 5143
+    },
+    {
+        "events": "100 Back-100 Free",
+        "score": 6286.000000000001
+    },
+    {
+        "events": "100 Back-200 Free",
+        "score": 2000
+    },
+    {
+        "events": "100 Back-500 Free",
+        "score": 286
+    },
+    {
+        "events": "100 Back-1000 Free",
+        "score": 0
+    },
+    {
+        "events": "100 Back-1650 Free",
+        "score": 571
+    },
+    {
+        "events": "100 Back-200 Back",
+        "score": 7429
+    },
+    {
+        "events": "100 Back-100 Breast",
+        "score": 0
+    },
+    {
+        "events": "100 Back-200 Breast",
+        "score": 0
+    },
+    {
+        "events": "100 Back-100 Fly",
+        "score": 4286
+    },
+    {
+        "events": "100 Back-200 Fly",
+        "score": 857
+    },
+    {
+        "events": "100 Back-200 IM",
+        "score": 2571
+    },
+    {
+        "events": "100 Back-400 IM",
+        "score": 571
+    },
+    {
+        "events": "200 Back-50 Free",
+        "score": 645
+    },
+    {
+        "events": "200 Back-100 Free",
+        "score": 2097
+    },
+    {
+        "events": "200 Back-200 Free",
+        "score": 3548
+    },
+    {
+        "events": "200 Back-500 Free",
+        "score": 1774
+    },
+    {
+        "events": "200 Back-1000 Free",
+        "score": 161
+    },
+    {
+        "events": "200 Back-1650 Free",
+        "score": 161
+    },
+    {
+        "events": "200 Back-100 Back",
+        "score": 7742
+    },
+    {
+        "events": "200 Back-100 Breast",
+        "score": 323
+    },
+    {
+        "events": "200 Back-200 Breast",
+        "score": 161
+    },
+    {
+        "events": "200 Back-100 Fly",
+        "score": 806
+    },
+    {
+        "events": "200 Back-200 Fly",
+        "score": 1935
+    },
+    {
+        "events": "200 Back-200 IM",
+        "score": 5484
+    },
+    {
+        "events": "200 Back-400 IM",
+        "score": 5161
+    },
+    {
+        "events": "100 Breast-50 Free",
+        "score": 3694
+    },
+    {
+        "events": "100 Breast-100 Free",
+        "score": 3874
+    },
+    {
+        "events": "100 Breast-200 Free",
+        "score": 1351
+    },
+    {
+        "events": "100 Breast-500 Free",
+        "score": 360
+    },
+    {
+        "events": "100 Breast-1000 Free",
+        "score": 90
+    },
+    {
+        "events": "100 Breast-1650 Free",
+        "score": 0
+    },
+    {
+        "events": "100 Breast-100 Back",
+        "score": 90
+    },
+    {
+        "events": "100 Breast-200 Back",
+        "score": 0
+    },
+    {
+        "events": "100 Breast-200 Breast",
+        "score": 8468
+    },
+    {
+        "events": "100 Breast-100 Fly",
+        "score": 1351
+    },
+    {
+        "events": "100 Breast-200 Fly",
+        "score": 360
+    },
+    {
+        "events": "100 Breast-200 IM",
+        "score": 7568
+    },
+    {
+        "events": "100 Breast-400 IM",
+        "score": 2793
+    },
+    {
+        "events": "200 Breast-50 Free",
+        "score": 1064
+    },
+    {
+        "events": "200 Breast-100 Free",
+        "score": 213
+    },
+    {
+        "events": "200 Breast-200 Free",
+        "score": 1064
+    },
+    {
+        "events": "200 Breast-500 Free",
+        "score": 426
+    },
+    {
+        "events": "200 Breast-1000 Free",
+        "score": 213
+    },
+    {
+        "events": "200 Breast-1650 Free",
+        "score": 426
+    },
+    {
+        "events": "200 Breast-100 Back",
+        "score": 0
+    },
+    {
+        "events": "200 Breast-200 Back",
+        "score": 213
+    },
+    {
+        "events": "200 Breast-100 Breast",
+        "score": 10000
+    },
+    {
+        "events": "200 Breast-100 Fly",
+        "score": 1915
+    },
+    {
+        "events": "200 Breast-200 Fly",
+        "score": 1064
+    },
+    {
+        "events": "200 Breast-200 IM",
+        "score": 7872
+    },
+    {
+        "events": "200 Breast-400 IM",
+        "score": 5532
+    },
+    {
+        "events": "100 Fly-50 Free",
+        "score": 4655
+    },
+    {
+        "events": "100 Fly-100 Free",
+        "score": 6897
+    },
+    {
+        "events": "100 Fly-200 Free",
+        "score": 4828
+    },
+    {
+        "events": "100 Fly-500 Free",
+        "score": 0
+    },
+    {
+        "events": "100 Fly-1000 Free",
+        "score": 172
+    },
+    {
+        "events": "100 Fly-1650 Free",
+        "score": 0
+    },
+    {
+        "events": "100 Fly-100 Back",
+        "score": 2241
+    },
+    {
+        "events": "100 Fly-200 Back",
+        "score": 2069
+    },
+    {
+        "events": "100 Fly-100 Breast",
+        "score": 1034
+    },
+    {
+        "events": "100 Fly-200 Breast",
+        "score": 172
+    },
+    {
+        "events": "100 Fly-200 Fly",
+        "score": 5000
+    },
+    {
+        "events": "100 Fly-200 IM",
+        "score": 2414
+    },
+    {
+        "events": "100 Fly-400 IM",
+        "score": 517
+    },
+    {
+        "events": "200 Fly-50 Free",
+        "score": 1587
+    },
+    {
+        "events": "200 Fly-100 Free",
+        "score": 2381
+    },
+    {
+        "events": "200 Fly-200 Free",
+        "score": 4603
+    },
+    {
+        "events": "200 Fly-500 Free",
+        "score": 3810
+    },
+    {
+        "events": "200 Fly-1000 Free",
+        "score": 1111
+    },
+    {
+        "events": "200 Fly-1650 Free",
+        "score": 635
+    },
+    {
+        "events": "200 Fly-100 Back",
+        "score": 952.0000000000001
+    },
+    {
+        "events": "200 Fly-200 Back",
+        "score": 794
+    },
+    {
+        "events": "200 Fly-100 Breast",
+        "score": 159
+    },
+    {
+        "events": "200 Fly-200 Breast",
+        "score": 317
+    },
+    {
+        "events": "200 Fly-100 Fly",
+        "score": 7143.000000000001
+    },
+    {
+        "events": "200 Fly-200 IM",
+        "score": 3175
+    },
+    {
+        "events": "200 Fly-400 IM",
+        "score": 3333
+    },
+    {
+        "events": "200 IM-50 Free",
+        "score": 1207
+    },
+    {
+        "events": "200 IM-100 Free",
+        "score": 1897
+    },
+    {
+        "events": "200 IM-200 Free",
+        "score": 2241
+    },
+    {
+        "events": "200 IM-500 Free",
+        "score": 1379
+    },
+    {
+        "events": "200 IM-1000 Free",
+        "score": 0
+    },
+    {
+        "events": "200 IM-1650 Free",
+        "score": 0
+    },
+    {
+        "events": "200 IM-100 Back",
+        "score": 2759
+    },
+    {
+        "events": "200 IM-200 Back",
+        "score": 3276
+    },
+    {
+        "events": "200 IM-100 Breast",
+        "score": 3621
+    },
+    {
+        "events": "200 IM-200 Breast",
+        "score": 3103
+    },
+    {
+        "events": "200 IM-100 Fly",
+        "score": 2586
+    },
+    {
+        "events": "200 IM-200 Fly",
+        "score": 2241
+    },
+    {
+        "events": "200 IM-400 IM",
+        "score": 5689.999999999999
+    },
+    {
+        "events": "400 IM-50 Free",
+        "score": 122.00000000000001
+    },
+    {
+        "events": "400 IM-100 Free",
+        "score": 366
+    },
+    {
+        "events": "400 IM-200 Free",
+        "score": 2195
+    },
+    {
+        "events": "400 IM-500 Free",
+        "score": 4268
+    },
+    {
+        "events": "400 IM-1000 Free",
+        "score": 1951
+    },
+    {
+        "events": "400 IM-1650 Free",
+        "score": 1585
+    },
+    {
+        "events": "400 IM-100 Back",
+        "score": 366
+    },
+    {
+        "events": "400 IM-200 Back",
+        "score": 1585
+    },
+    {
+        "events": "400 IM-100 Breast",
+        "score": 1951
+    },
+    {
+        "events": "400 IM-200 Breast",
+        "score": 3659
+    },
+    {
+        "events": "400 IM-100 Fly",
+        "score": 732
+    },
+    {
+        "events": "400 IM-200 Fly",
+        "score": 3293
+    },
+    {
+        "events": "400 IM-200 IM",
+        "score": 7927
+    }
+]
