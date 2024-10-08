@@ -39,3 +39,9 @@ td {
 thead {
     font-weight: 900;
 }
+
+@media (width <= 600px) {
+    .main {
+        margin: 20px 4%;
+    }
+}
