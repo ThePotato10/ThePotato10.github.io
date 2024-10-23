@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>WJHS Multivariable Calc/Differential Equations Notes</title>
+</head>
+
+<body>
+    <div class="main">
+        <h1>WJHS Multivariable Calc/Differential Equations Notes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td>Chapter</td>
+                    <td>Topic</td>
+                    <td>Link</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11</td>
+                    <td>Functions of several variables</td>
+                    <td class="link"
+                        onclick="onLoadMath('https://raw.githubusercontent.com/ThePotato10/multivariable-notes/refs/heads/main/11-functions-of-several-variables.tex')">
+                        Link
+                    </td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Limits and Continuity</td>
+                    <td class="link"
+                        onclick="onLoadMath('https://raw.githubusercontent.com/ThePotato10/multivariable-notes/refs/heads/main/11-limits-and-continuity.tex')">
+                        Link
+                    </td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Partial Derivatives</td>
+                    <td class="link"
+                        onclick="onLoadMath('https://raw.githubusercontent.com/ThePotato10/multivariable-notes/refs/heads/main/11-partial-derivatives.tex')">
+                        Link
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="notes"></div>
+    </div>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script>
+        function onLoadMath(link) {
+            const notes = document.querySelector("#notes");
+
+            MathJax.typesetClear([notes]);
+
+            fetch(link)
+                .then(blob => blob.text())
+                .then(data => notes.innerHTML = data)
+                .then(() => MathJax.typeset([notes]));
+        }
+    </script>
+        
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: "PT Serif", serif;
+    background-color: #F2F1F0;
+}
+
+.main {
+    margin: 20px 20%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding: 20px 40px;
+    background-color: white;
+}
+
+input {
+    padding: 5px 10px;
+}
+
+button {
+    padding: 5px 10px;
+}
+
+p, h1, h2 {
+    margin: 20px 0;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+}
+
+thead {
+    font-weight: 900;
+    background-color: #b5b3be;
+}
+
+.link {
+    color: #1f559c;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#notes {
+    margin-top: 40px;
+    line-height: 2;
+}
