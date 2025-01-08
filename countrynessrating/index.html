@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Countryness Rating</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+        <script src="main.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div>
+        
+            <h1 >Countryness Rating 🤠</h1>
+            <p>My brother and I have always joked that every country song is a dude with a guitar singing about god, girls, small towns, trucks and alcohol. Using a random-ish sample of popular country music from the last 30 years, this site quantifies just how 'country' any given song is</p>
+            <div class="input-box">
+                <label>Song: <input id="songInput"/></label>
+                <label>Artist: <input id="artistInput"/></label>
+                <button onclick="onInput()">Enter</button>
+            </div>
+            <p>Country Meter</p>
+            <meter id="meter" min="0", max="4" value="0"></meter>
+            <p id="textOutput"></p>
+        </div>
+        
+        <div class="loader-hide" id="loader">
+            <div class="lds-facebook"><div></div><div></div><div></div></div>
+        </div>
+        <canvas id="canvas"></canvas>
+    </body>
+</html>

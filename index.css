@@ -5,7 +5,7 @@ html {
 
 body {
     margin: 0;
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     background: url("/background.svg");
     background-size: cover;
@@ -98,4 +98,26 @@ a:visited {
 .bio p {
     width: 50%;
     line-height: 200%;
+}
+
+@media screen and (width <= 600px) {
+    h1 {
+        margin: 5px;
+        font-size: 24px;
+    }
+
+    body {
+        height: fit-content;
+    }
+
+    .main {
+        flex-direction: column;
+        padding: 5px;
+    }
+     
+    .bio {
+        height: fit-content;
+        margin: 0;
+        box-sizing: border-box;
+    }
 }

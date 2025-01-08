@@ -51,3 +51,9 @@ thead {
     margin-top: 40px;
     line-height: 2;
 }
+
+@media (width <= 600px) {
+    .main {
+        margin: 20px 4%;
+    }
+}

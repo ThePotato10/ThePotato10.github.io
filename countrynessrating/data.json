@@ -1,0 +1,579 @@
+{
+    "Old Dominion": {
+        "god": 1,
+        "town": 0,
+        "girls": 56,
+        "trucks": 1,
+        "alcohol": 15,
+        "lines": 378
+    },
+    "Morgan Wallen": {
+        "god": 4,
+        "town": 5,
+        "girls": 65,
+        "trucks": 0,
+        "alcohol": 33,
+        "lines": 294
+    },
+    "Dylan Scott": {
+        "god": 1,
+        "town": 0,
+        "girls": 6,
+        "trucks": 3,
+        "alcohol": 0,
+        "lines": 31
+    },
+    "Riley Green": {
+        "god": 2,
+        "town": 0,
+        "girls": 5,
+        "trucks": 0,
+        "alcohol": 5,
+        "lines": 47
+    },
+    "Tyler Braden": {
+        "god": 1,
+        "town": 0,
+        "girls": 0,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 58
+    },
+    "Jordan Davis": {
+        "god": 11,
+        "town": 0,
+        "girls": 20,
+        "trucks": 1,
+        "alcohol": 13,
+        "lines": 204
+    },
+    "Tucker Wetmore": {
+        "god": 0,
+        "town": 0,
+        "girls": 5,
+        "trucks": 3,
+        "alcohol": 4,
+        "lines": 45
+    },
+    "Vincent Mason": {
+        "god": 0,
+        "town": 0,
+        "girls": 6,
+        "trucks": 0,
+        "alcohol": 1,
+        "lines": 41
+    },
+    "Shaboozey": {
+        "god": 5,
+        "town": 0,
+        "girls": 16,
+        "trucks": 0,
+        "alcohol": 20,
+        "lines": 89
+    },
+    "Blake Shelton": {
+        "god": 0,
+        "town": 0,
+        "girls": 21,
+        "trucks": 1,
+        "alcohol": 9,
+        "lines": 209
+    },
+    "Luke Combs": {
+        "god": 4,
+        "town": 0,
+        "girls": 31,
+        "trucks": 3,
+        "alcohol": 17,
+        "lines": 206
+    },
+    "Nate Smith": {
+        "god": 1,
+        "town": 0,
+        "girls": 11,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 47
+    },
+    "Josh Ross": {
+        "god": 0,
+        "town": 0,
+        "girls": 1,
+        "trucks": 0,
+        "alcohol": 1,
+        "lines": 50
+    },
+    "Tyler Hubbard": {
+        "god": 0,
+        "town": 1,
+        "girls": 2,
+        "trucks": 4,
+        "alcohol": 0,
+        "lines": 40
+    },
+    "Sam Barber": {
+        "god": 0,
+        "town": 0,
+        "girls": 0,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 24
+    },
+    "Zach Top": {
+        "god": 1,
+        "town": 0,
+        "girls": 4,
+        "trucks": 0,
+        "alcohol": 3,
+        "lines": 34
+    },
+    "Zach Bryan": {
+        "god": 1,
+        "town": 0,
+        "girls": 2,
+        "trucks": 2,
+        "alcohol": 0,
+        "lines": 56
+    },
+    "Toby Keith": {
+        "god": 4,
+        "town": 0,
+        "girls": 29,
+        "trucks": 4,
+        "alcohol": 22,
+        "lines": 319
+    },
+    "Alabama": {
+        "god": 0,
+        "town": 0,
+        "girls": 0,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 1
+    },
+    "Tim McGraw": {
+        "god": 1,
+        "town": 0,
+        "girls": 14,
+        "trucks": 0,
+        "alcohol": 5,
+        "lines": 209
+    },
+    "Alan Jackson": {
+        "god": 6,
+        "town": 4,
+        "girls": 6,
+        "trucks": 3,
+        "alcohol": 3,
+        "lines": 193
+    },
+    "George Strait": {
+        "god": 3,
+        "town": 0,
+        "girls": 29,
+        "trucks": 1,
+        "alcohol": 0,
+        "lines": 145
+    },
+    "Lonestar": {
+        "god": 0,
+        "town": 0,
+        "girls": 8,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 36
+    },
+    "Vince Gill": {
+        "god": 3,
+        "town": 0,
+        "girls": 2,
+        "trucks": 0,
+        "alcohol": 1,
+        "lines": 49
+    },
+    "David Lee Murphy": {
+        "god": 0,
+        "town": 1,
+        "girls": 3,
+        "trucks": 0,
+        "alcohol": 8,
+        "lines": 28
+    },
+    "Joe Diffie": {
+        "god": 0,
+        "town": 0,
+        "girls": 2,
+        "trucks": 1,
+        "alcohol": 1,
+        "lines": 2
+    },
+    "John Anderson": {
+        "god": 0,
+        "town": 0,
+        "girls": 6,
+        "trucks": 0,
+        "alcohol": 11,
+        "lines": 34
+    },
+    "LeAnn Rimes": {
+        "god": 0,
+        "town": 0,
+        "girls": 1,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 20
+    },
+    "Kenny Chesney": {
+        "god": 8,
+        "town": 1,
+        "girls": 35,
+        "trucks": 5,
+        "alcohol": 16,
+        "lines": 262
+    },
+    "Trace Adkins": {
+        "god": 0,
+        "town": 0,
+        "girls": 3,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 51
+    },
+    "Chris LeDoux": {
+        "god": 0,
+        "town": 0,
+        "girls": 0,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 38
+    },
+    "Hal Ketchum": {
+        "god": 0,
+        "town": 8,
+        "girls": 1,
+        "trucks": 1,
+        "alcohol": 3,
+        "lines": 30
+    },
+    "John Michael Montgomery": {
+        "god": 0,
+        "town": 0,
+        "girls": 12,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 39
+    },
+    "Clay Walker": {
+        "god": 1,
+        "town": 0,
+        "girls": 12,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 64
+    },
+    "Mark Chesnutt": {
+        "god": 0,
+        "town": 0,
+        "girls": 1,
+        "trucks": 3,
+        "alcohol": 4,
+        "lines": 62
+    },
+    "Tracy Lawrence": {
+        "god": 0,
+        "town": 0,
+        "girls": 3,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 37
+    },
+    "Rhett Akins": {
+        "god": 3,
+        "town": 0,
+        "girls": 4,
+        "trucks": 7,
+        "alcohol": 0,
+        "lines": 37
+    },
+    "Doug Stone": {
+        "god": 0,
+        "town": 0,
+        "girls": 4,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 15
+    },
+    "Rascal Flatts": {
+        "god": 5,
+        "town": 0,
+        "girls": 6,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 56
+    },
+    "Zac Brown Band": {
+        "god": 1,
+        "town": 6,
+        "girls": 13,
+        "trucks": 0,
+        "alcohol": 16,
+        "lines": 195
+    },
+    "Keith Urban": {
+        "god": 1,
+        "town": 0,
+        "girls": 34,
+        "trucks": 1,
+        "alcohol": 7,
+        "lines": 205
+    },
+    "Travis Tritt": {
+        "god": 1,
+        "town": 0,
+        "girls": 1,
+        "trucks": 0,
+        "alcohol": 1,
+        "lines": 44
+    },
+    "Jason Aldean": {
+        "god": 9,
+        "town": 1,
+        "girls": 6,
+        "trucks": 3,
+        "alcohol": 2,
+        "lines": 98
+    },
+    "Little Big Town": {
+        "god": 5,
+        "town": 2,
+        "girls": 5,
+        "trucks": 0,
+        "alcohol": 2,
+        "lines": 170
+    },
+    "Darius Rucker": {
+        "god": 2,
+        "town": 0,
+        "girls": 17,
+        "trucks": 4,
+        "alcohol": 12,
+        "lines": 152
+    },
+    "Brad Paisley": {
+        "god": 0,
+        "town": 6,
+        "girls": 1,
+        "trucks": 6,
+        "alcohol": 0,
+        "lines": 35
+    },
+    "Joe Nichols": {
+        "god": 3,
+        "town": 0,
+        "girls": 11,
+        "trucks": 0,
+        "alcohol": 13,
+        "lines": 63
+    },
+    "Rodney Atkins": {
+        "god": 5,
+        "town": 0,
+        "girls": 4,
+        "trucks": 0,
+        "alcohol": 5,
+        "lines": 88
+    },
+    "Chris Young": {
+        "god": 0,
+        "town": 0,
+        "girls": 5,
+        "trucks": 0,
+        "alcohol": 1,
+        "lines": 23
+    },
+    "Josh Gracin": {
+        "god": 0,
+        "town": 0,
+        "girls": 5,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 39
+    },
+    "Craig Morgan": {
+        "god": 0,
+        "town": 1,
+        "girls": 2,
+        "trucks": 0,
+        "alcohol": 1,
+        "lines": 27
+    },
+    "Josh Turner": {
+        "god": 7,
+        "town": 0,
+        "girls": 14,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 61
+    },
+    "Gary Allan": {
+        "god": 0,
+        "town": 0,
+        "girls": 6,
+        "trucks": 1,
+        "alcohol": 0,
+        "lines": 66
+    },
+    "Carrie Underwood": {
+        "god": 2,
+        "town": 0,
+        "girls": 3,
+        "trucks": 0,
+        "alcohol": 7,
+        "lines": 184
+    },
+    "Jace Everett": {
+        "god": 0,
+        "town": 0,
+        "girls": 1,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 21
+    },
+    "Luke Bryan": {
+        "god": 3,
+        "town": 5,
+        "girls": 54,
+        "trucks": 7,
+        "alcohol": 24,
+        "lines": 289
+    },
+    "Chris Cagle": {
+        "god": 0,
+        "town": 0,
+        "girls": 1,
+        "trucks": 0,
+        "alcohol": 3,
+        "lines": 41
+    },
+    "Sam Hunt": {
+        "god": 1,
+        "town": 4,
+        "girls": 27,
+        "trucks": 0,
+        "alcohol": 1,
+        "lines": 134
+    },
+    "Eric Church": {
+        "god": 0,
+        "town": 1,
+        "girls": 2,
+        "trucks": 0,
+        "alcohol": 9,
+        "lines": 75
+    },
+    "Chris Stapleton": {
+        "god": 0,
+        "town": 0,
+        "girls": 11,
+        "trucks": 0,
+        "alcohol": 18,
+        "lines": 91
+    },
+    "Jake Owen": {
+        "god": 0,
+        "town": 0,
+        "girls": 3,
+        "trucks": 0,
+        "alcohol": 2,
+        "lines": 26
+    },
+    "Brothers Osborne": {
+        "god": 0,
+        "town": 0,
+        "girls": 3,
+        "trucks": 0,
+        "alcohol": 3,
+        "lines": 42
+    },
+    "Jon Pardi": {
+        "god": 1,
+        "town": 4,
+        "girls": 18,
+        "trucks": 3,
+        "alcohol": 1,
+        "lines": 115
+    },
+    "Midland": {
+        "god": 0,
+        "town": 0,
+        "girls": 3,
+        "trucks": 0,
+        "alcohol": 12,
+        "lines": 41
+    },
+    "Eli Young Band": {
+        "god": 0,
+        "town": 0,
+        "girls": 16,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 38
+    },
+    "Kip Moore": {
+        "god": 2,
+        "town": 0,
+        "girls": 13,
+        "trucks": 7,
+        "alcohol": 6,
+        "lines": 32
+    },
+    "Hunter Hayes": {
+        "god": 0,
+        "town": 0,
+        "girls": 7,
+        "trucks": 0,
+        "alcohol": 1,
+        "lines": 43
+    },
+    "Lady A": {
+        "god": 0,
+        "town": 0,
+        "girls": 4,
+        "trucks": 0,
+        "alcohol": 8,
+        "lines": 54
+    },
+    "Glen Campbell": {
+        "god": 0,
+        "town": 0,
+        "girls": 0,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 37
+    },
+    "Florida Georgia Line": {
+        "god": 0,
+        "town": 0,
+        "girls": 0,
+        "trucks": 0,
+        "alcohol": 0,
+        "lines": 54
+    },
+    "Lynyrd Skynyrd": {
+        "god": 6,
+        "town": 0,
+        "girls": 0,
+        "trucks": 1,
+        "alcohol": 0,
+        "lines": 34
+    },
+    "total": {
+        "god": 115,
+        "town": 50,
+        "girls": 722,
+        "trucks": 76,
+        "alcohol": 350,
+        "lines": 6197
+      }
+      
+}
