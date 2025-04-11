@@ -1,0 +1,17 @@
+html, body {
+    width: calc(100% - 30px);
+    height: calc(100% - 40px);
+}
+
+.mapbox {
+    display: block;
+    width: 90vw;
+    height: 70vh;
+    border: 1px solid black;
+    margin: 40px 30px 0 30px;
+}
+
+p, button { 
+    margin-left: 80px;
+    margin-top: 10px;
+}
