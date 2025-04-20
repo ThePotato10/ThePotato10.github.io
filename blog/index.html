@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
+    <title>Squidback</title>
+    <style>
+        /* Box sizing rules */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            font-family: 'Domine', serif;
+        }
+
+        /* Prevent font size inflation */
+        html {
+            -moz-text-size-adjust: none;
+            -webkit-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+
+        /* Remove default margin in favour of better control in authored CSS */
+        body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+            margin-block-end: 0;
+        }
+
+        /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+        ul[role='list'], ol[role='list'] {
+            list-style: none;
+        }
+
+        /* Set core body defaults */
+        body {
+            height: 100%;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Set shorter line heights on headings and interactive elements */
+        h1, h2, h3, h4, button, input, label {
+            line-height: 1.1;
+        }
+
+        /* Balance text wrapping on headings */
+        h1, h2, h3, h4 {
+            text-wrap: balance;
+        }
+
+        /* Make images easier to work with */
+        img, picture {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Inherit fonts for inputs and buttons */
+        input, button, textarea, select {
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        /* Make sure textareas without a rows attribute are not tiny */
+        textarea:not([rows]) {
+            min-height: 10em;
+        }
+
+        /* Anything that has been anchored to should have extra scroll margin */
+        :target {
+            scroll-margin-block: 5ex;
+        }
+
+        table, h1 {
+            margin: 40px auto;
+        }
+
+        h1 {
+            width: fit-content;
+        }
+
+        table, tbody, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        td {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Squidback Blog</h1>
+    <table>
+        <tbody>
+<tr><td><a href="pages/hello-world.html">Hello World</a></td><td>4/19/2025</td></tr>
+            <tr>
+                <td><a href="pages/template.html">Template</a></td>
+                <td>4-17-2025</td>
+            </tr>
+            <tr>
+                <td><a href="pages/template.html">Template</a></td>
+                <td>4-17-2025</td>
+            </tr>
+            <tr>
+                <td><a href="pages/template.html">Template</a></td>
+                <td>4-17-2025</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

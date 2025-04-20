@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
+
+    <title>A Post's Title</title>
+</head>
+
+<body>
+    <h1 id="title" class="pl-12 pr-12 w-full lg:w-2xl lg:pl-8 lg:pr-8 m-auto text-3xl mt-9">$title$</h1>
+    <div id="author" class="pl-16 pr-12 w-full lg:w-2xl lg:pl-10 lg:pr-8 m-auto text-emerald-400 mt-6 ">$author$</div>
+    <div id="article" class="*:mb-8 *:leading-[2em] pl-12 pr-12 w-fit lg:w-2xl lg:pl-8 lg:pr-8 font-[Domine] ml-4 mr-4 lg:m-auto mt-3 border-emerald-400 border-l-2 border-solid border-r-2">$text$</div>
+</body>
+
+</html>
