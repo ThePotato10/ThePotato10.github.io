@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Film Lab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Space+Mono:wght@400;700&family=Archivo:wght@400;500&display=swap');
+
+  :root{
+    --bg:#17140F;
+    --panel:#211D16;
+    --panel-2:#2B251C;
+    --accent:#E8622C;
+    --accent-2:#C9A34E;
+    --text:#F3ECDF;
+    --text-muted:#9C927E;
+    --line:#3A3227;
+    --danger:#C21E1E;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top left, #221D14 0%, var(--bg) 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Archivo', sans-serif;
+    min-height:100vh;
+    padding:28px 20px 60px;
+  }
+
+  /* ---------- sprocket strip decoration ---------- */
+  .sprocket-row{
+    display:flex; gap:10px; padding:6px 0; opacity:0.55;
+  }
+  .sprocket-row div{
+    width:12px; height:8px; border-radius:2px;
+    background:repeating-linear-gradient(90deg, var(--line) 0 8px, transparent 8px 20px);
+  }
+  .sprocket-strip{
+    height:14px;
+    background-image: repeating-linear-gradient(90deg, var(--line) 0 10px, transparent 10px 26px);
+    background-position:center;
+    opacity:0.5;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    max-width:1180px; margin:0 auto 22px; position:relative;
+  }
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:11px; letter-spacing:0.22em; color:var(--accent-2);
+    text-transform:uppercase; margin-bottom:6px;
+  }
+  h1{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    font-size:clamp(32px, 5vw, 52px);
+    margin:0 0 4px;
+    color:var(--text);
+  }
+  h1 span{color:var(--accent);}
+  .sub{
+    font-size:14px; color:var(--text-muted); max-width:560px; line-height:1.5;
+  }
+
+  /* ---------- layout ---------- */
+  .layout{
+    max-width:1180px; margin:26px auto 0;
+    display:grid;
+    grid-template-columns: 260px 1fr;
+    gap:22px;
+  }
+  @media (max-width: 860px){
+    .layout{grid-template-columns:1fr;}
+  }
+
+  /* ---------- film stock rail ---------- */
+  .rail-label{
+    font-family:'Oswald', sans-serif;
+    font-size:12px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--text-muted); margin:0 0 10px 4px;
+  }
+  .stocks{
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .stock-card{
+    position:relative;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:10px 12px 10px 16px;
+    cursor:pointer;
+    display:flex; flex-direction:column; gap:2px;
+    transition:transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+    overflow:hidden;
+  }
+  .stock-card::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0; width:5px;
+    background:var(--stripe);
+  }
+  .stock-card:hover{ transform:translateX(2px); border-color:var(--stripe); }
+  .stock-card.active{
+    background:var(--panel-2);
+    border-color:var(--stripe);
+    box-shadow: 0 0 0 1px var(--stripe) inset;
+  }
+  .stock-card.suggested{
+    /* badge only — no outline */
+  }
+  .suggested-badge{
+    display:none;
+    position:absolute; top:8px; right:10px;
+    font-family:'Space Mono', monospace;
+    font-size:8.5px; letter-spacing:0.08em;
+    color:#171008;
+    background:var(--accent-2);
+    padding:2px 6px;
+    border-radius:3px;
+  }
+  .stock-card.suggested .suggested-badge{ display:block; }
+  .rail-note{
+    display:none;
+    font-family:'Space Mono', monospace;
+    font-size:10.5px; color:var(--text-muted);
+    margin:-4px 0 10px 4px; line-height:1.4;
+  }
+  .rail-note.show{ display:block; }
+  .rail-note b{ color:var(--accent-2); }
+  .stock-name{
+    font-family:'Oswald', sans-serif;
+    font-weight:600; font-size:15px; letter-spacing:0.01em;
+    color:var(--text);
+  }
+  .stock-meta{
+    font-family:'Space Mono', monospace;
+    font-size:10.5px; color:var(--text-muted); letter-spacing:0.04em;
+  }
+  .stock-tag{
+    display:inline-block; margin-top:4px;
+    font-family:'Space Mono', monospace;
+    font-size:9.5px; color:var(--stripe);
+    letter-spacing:0.05em;
+  }
+
+  /* ---------- main stage ---------- */
+  .stage{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px;
+    display:flex; flex-direction:column;
+    min-height:480px;
+  }
+  .frame-counter{
+    font-family:'Space Mono', monospace;
+    font-size:11px; color:var(--accent-2);
+    letter-spacing:0.1em;
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom:8px;
+  }
+  .frame-counter .dot{
+    width:6px;height:6px;border-radius:50%;background:var(--accent);
+    display:inline-block; margin-right:6px;
+    box-shadow:0 0 6px var(--accent);
+  }
+
+  .film-window{
+    flex:1;
+    background:#0D0B08;
+    border-radius:4px;
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+    overflow:hidden;
+    min-height:360px;
+  }
+  .film-window canvas{
+    max-width:100%; max-height:520px;
+    display:block;
+    border-radius:2px;
+  }
+
+  .dropzone{
+    width:100%; height:100%;
+    min-height:360px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:10px;
+    cursor:pointer;
+    color:var(--text-muted);
+    border:1px dashed var(--line);
+    border-radius:4px;
+    text-align:center;
+    padding:20px;
+  }
+  .dropzone:hover{ border-color:var(--accent); color:var(--text); }
+  .dropzone .icon{
+    font-family:'Oswald', sans-serif;
+    font-size:34px; color:var(--accent-2);
+  }
+  .dropzone .hint{
+    font-family:'Space Mono', monospace; font-size:11px;
+  }
+  input[type=file]{ display:none; }
+
+  .processing-badge{
+    position:absolute; top:10px; right:10px;
+    background:rgba(0,0,0,0.6);
+    color:var(--accent-2);
+    font-family:'Space Mono', monospace;
+    font-size:10px; letter-spacing:0.08em;
+    padding:4px 8px; border-radius:3px;
+    display:none;
+  }
+
+  /* ---------- controls ---------- */
+  .controls{
+    margin-top:16px;
+    display:flex; flex-wrap:wrap; gap:18px 26px;
+    align-items:center;
+    padding-top:14px;
+    border-top:1px solid var(--line);
+  }
+  .control-group{ display:flex; flex-direction:column; gap:6px; }
+  .control-label{
+    font-family:'Space Mono', monospace;
+    font-size:10px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--text-muted);
+  }
+  input[type=range]{
+    -webkit-appearance:none;
+    width:150px; height:3px;
+    background:var(--line);
+    border-radius:2px;
+    outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:14px; height:14px; border-radius:50%;
+    background:var(--accent);
+    cursor:pointer;
+    border:2px solid #17140F;
+  }
+  .toggle{
+    display:flex; align-items:center; gap:8px; cursor:pointer;
+    font-family:'Space Mono', monospace; font-size:11px; color:var(--text);
+  }
+  .toggle input{ accent-color:var(--accent); width:14px; height:14px; }
+
+  .spacer{ flex:1; }
+
+  button.primary, button.ghost{
+    font-family:'Oswald', sans-serif;
+    font-weight:600; letter-spacing:0.06em; text-transform:uppercase;
+    font-size:12.5px;
+    padding:10px 18px;
+    border-radius:5px;
+    cursor:pointer;
+    border:1px solid transparent;
+  }
+  button.primary{
+    background:var(--accent); color:#171008; border-color:var(--accent);
+  }
+  button.primary:hover{ background:#f2703b; }
+  button.primary:disabled{ opacity:0.35; cursor:not-allowed; }
+  button.ghost{
+    background:transparent; color:var(--text-muted); border-color:var(--line);
+  }
+  button.ghost:hover{ color:var(--text); border-color:var(--text-muted); }
+
+  footer{
+    max-width:1180px; margin:26px auto 0;
+    font-family:'Space Mono', monospace; font-size:10.5px; color:var(--text-muted);
+    text-align:center; letter-spacing:0.04em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Digital Developing Tank</div>
+  <h1>Film <span>Lab</span></h1>
+  <div class="sub">Upload a photo and run it through emulated film stocks &mdash; grain, color response, and contrast curves modeled after their real-world characteristics. Vibe coded with Claude Sonnet 5.</div>
+  <div class="sprocket-strip" style="margin-top:14px;"></div>
+</header>
+
+<div class="layout">
+  <div>
+    <div class="rail-label">Film Stocks</div>
+    <div class="rail-note" id="railNote">&#9733; <b>Best fit</b> highlights are based on this photo's tone, contrast and color.</div>
+    <div class="stocks" id="stockRail"></div>
+  </div>
+
+  <div class="stage">
+    <div class="frame-counter">
+      <span><span class="dot"></span>FRAME <span id="frameNum">01A</span></span>
+      <span id="dimsLabel">&mdash;</span>
+    </div>
+
+    <div class="film-window" id="filmWindow">
+      <div class="dropzone" id="dropzone">
+        <div class="icon">&#9673;</div>
+        <div>Drop a photo here, or click to upload</div>
+        <div class="hint">JPG / PNG &middot; processed entirely in your browser</div>
+      </div>
+      <canvas id="canvas" style="display:none;"></canvas>
+      <div class="processing-badge" id="processingBadge">DEVELOPING&hellip;</div>
+    </div>
+    <input type="file" id="fileInput" accept="image/*">
+
+    <div class="controls" id="controls" style="display:none;">
+      <div class="control-group">
+        <label class="control-label">Intensity</label>
+        <input type="range" id="intensity" min="0" max="100" value="85">
+      </div>
+      <label class="toggle"><input type="checkbox" id="grainToggle" checked> Grain</label>
+      <label class="toggle"><input type="checkbox" id="vignetteToggle" checked> Vignette</label>
+      <div class="spacer"></div>
+      <button class="ghost" id="newPhotoBtn">New photo</button>
+      <button class="primary" id="downloadBtn">Download</button>
+    </div>
+  </div>
+</div>
+
+<footer>Presets are stylistic approximations built from published film stock characteristics &mdash; not color-lab-accurate scans.</footer>
+
+<script>
+(function(){
+  const FILMS = [
+    { id:'none', name:'No Filter', iso:'Original', color:'#6B6459', tag:'Unedited photo',
+      tempR:0, tempB:0, sat:1, contrast:0, grain:0, vignette:0, bw:false, shadowLift:0 },
+    { id:'gold200', name:'Kodak Gold 200', iso:'ISO 200', color:'#D9A916', tag:'Warm & saturated',
+      tempR:16, tempB:-12, sat:1.20, contrast:8, grain:9, vignette:0.14, bw:false, shadowLift:0 },
+    { id:'portra800', name:'Kodak Portra 800', iso:'ISO 800', color:'#5B7052', tag:'High contrast, gritty',
+      tempR:7, tempB:-5, sat:0.90, contrast:24, grain:28, vignette:0.10, bw:false, shadowLift:12 },
+    { id:'ektar100', name:'Kodak Ektar 100', iso:'ISO 100', color:'#C7361F', tag:'Vivid, ultra-fine grain',
+      tempR:3, tempB:-1, sat:1.38, contrast:18, grain:5, vignette:0.05, bw:false, shadowLift:0 },
+    { id:'superia400', name:'Fuji Superia 400', iso:'ISO 400', color:'#3E7D3A', tag:'Cool greens, punchy',
+      tempR:-9, tempB:7, sat:1.10, contrast:11, grain:18, vignette:0.12, bw:false, shadowLift:5 },
+    { id:'trix400', name:'Kodak Tri-X 400', iso:'ISO 400', color:'#C21E1E', tag:'Classic B&W, heavy grain',
+      tempR:0, tempB:0, sat:0, contrast:34, grain:32, vignette:0.24, bw:true, shadowLift:0 },
+    { id:'hp5plus', name:'Ilford HP5 Plus', iso:'ISO 400', color:'#1F5FA8', tag:'Documentary B&W',
+      tempR:0, tempB:0, sat:0, contrast:17, grain:19, vignette:0.15, bw:true, shadowLift:7 },
+    { id:'cinestill800t', name:'Cinestill 800T', iso:'ISO 800 · Tungsten', color:'#C1272D', tag:'Blue cast, red halation glow',
+      tempR:-16, tempB:14, sat:1.02, contrast:14, grain:15, vignette:0.12, bw:false, shadowLift:6, halation:0.9 },
+    { id:'velvia50', name:'Fuji Velvia 50', iso:'ISO 50', color:'#00843D', tag:'Ultra-vivid slide film',
+      tempR:2, tempB:-2, sat:1.55, contrast:28, grain:3, vignette:0.08, bw:false, shadowLift:-8 },
+    { id:'ccd_flash', name:'Cheap Digital Camera', iso:'Early-2000s CCD', color:'#4C7EA8', tag:'Harsh flash, blue cast, blown out',
+      tempR:-15, tempB:17, sat:1.08, contrast:22, grain:11, vignette:0.14, bw:false, shadowLift:-8,
+      exposureBoost:24, flashHotspot:0.35 },
+  ];
+
+  const rail = document.getElementById('stockRail');
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('fileInput');
+  const filmWindow = document.getElementById('filmWindow');
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const controls = document.getElementById('controls');
+  const intensitySlider = document.getElementById('intensity');
+  const grainToggle = document.getElementById('grainToggle');
+  const vignetteToggle = document.getElementById('vignetteToggle');
+  const processingBadge = document.getElementById('processingBadge');
+  const frameNum = document.getElementById('frameNum');
+  const dimsLabel = document.getElementById('dimsLabel');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const newPhotoBtn = document.getElementById('newPhotoBtn');
+
+  let originalImage = null;   // HTMLImageElement
+  let baseImageData = null;   // untouched pixel data at working resolution
+  let halationLayer = null;   // precomputed bloom layer for Cinestill-style halation
+  let activeFilmId = FILMS[0].id;
+  let frameCount = 1;
+
+  const MAX_DIM = 1400;
+
+  // ---- build film stock rail ----
+  FILMS.forEach((f, idx) => {
+    const card = document.createElement('div');
+    card.className = 'stock-card' + (idx === 0 ? ' active' : '');
+    card.style.setProperty('--stripe', f.color);
+    card.dataset.id = f.id;
+    card.innerHTML = `
+      <div class="suggested-badge">BEST FIT</div>
+      <div class="stock-name">${f.name}</div>
+      <div class="stock-meta">${f.iso}</div>
+      <div class="stock-tag">${f.tag}</div>
+    `;
+    card.addEventListener('click', () => {
+      activeFilmId = f.id;
+      document.querySelectorAll('.stock-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      renderFilteredImage();
+    });
+    rail.appendChild(card);
+  });
+
+  // ---- upload handling ----
+  dropzone.addEventListener('click', () => fileInput.click());
+  dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.style.borderColor = 'var(--accent)'; });
+  dropzone.addEventListener('dragleave', () => { dropzone.style.borderColor = 'var(--line)'; });
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.style.borderColor = 'var(--line)';
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener('change', (e) => {
+    if (e.target.files && e.target.files[0]) loadFile(e.target.files[0]);
+  });
+  newPhotoBtn.addEventListener('click', () => {
+    dropzone.style.display = 'flex';
+    canvas.style.display = 'none';
+    controls.style.display = 'none';
+    dimsLabel.textContent = '\u2014';
+    fileInput.value = '';
+    document.getElementById('railNote').classList.remove('show');
+    document.querySelectorAll('.stock-card').forEach(card => card.classList.remove('suggested'));
+  });
+
+  function loadFile(file){
+    if (!file.type.startsWith('image/')) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        originalImage = img;
+        prepareBaseImage(img);
+        dropzone.style.display = 'none';
+        canvas.style.display = 'block';
+        controls.style.display = 'flex';
+        frameCount++;
+        frameNum.textContent = String(frameCount).padStart(2,'0') + 'A';
+        renderFilteredImage();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function prepareBaseImage(img){
+    let w = img.width, h = img.height;
+    if (Math.max(w,h) > MAX_DIM){
+      const scale = MAX_DIM / Math.max(w,h);
+      w = Math.round(w*scale); h = Math.round(h*scale);
+    }
+    canvas.width = w; canvas.height = h;
+    ctx.drawImage(img, 0, 0, w, h);
+    baseImageData = ctx.getImageData(0, 0, w, h);
+    dimsLabel.textContent = w + ' \u00d7 ' + h + ' px';
+    halationLayer = computeHalationLayer(baseImageData);
+    applyRecommendations(baseImageData);
+  }
+
+  // ---- bloom layer for halation-style effects (Cinestill 800T) ----
+  function computeHalationLayer(imageData){
+    const w = imageData.width, h = imageData.height;
+    const fullCanvas = document.createElement('canvas');
+    fullCanvas.width = w; fullCanvas.height = h;
+    fullCanvas.getContext('2d').putImageData(imageData, 0, 0);
+
+    // downscale so bright spots become soft blobs, then upscale back (cheap blur)
+    const smallW = Math.max(1, Math.round(w/12));
+    const smallH = Math.max(1, Math.round(h/12));
+    const smallCanvas = document.createElement('canvas');
+    smallCanvas.width = smallW; smallCanvas.height = smallH;
+    const sctx = smallCanvas.getContext('2d');
+    sctx.drawImage(fullCanvas, 0, 0, smallW, smallH);
+
+    const sd = sctx.getImageData(0, 0, smallW, smallH);
+    const d = sd.data;
+    const threshold = 195;
+    for (let i = 0; i < d.length; i += 4){
+      const lum = 0.299*d[i] + 0.587*d[i+1] + 0.114*d[i+2];
+      if (lum > threshold){
+        const strength = (lum - threshold) / (255 - threshold);
+        d[i] = 255; d[i+1] = 70*strength; d[i+2] = 40*strength;
+        d[i+3] = 255 * Math.min(1, strength*1.4);
+      } else {
+        d[i] = 0; d[i+1] = 0; d[i+2] = 0; d[i+3] = 0;
+      }
+    }
+    sctx.putImageData(sd, 0, 0);
+
+    const bloomCanvas = document.createElement('canvas');
+    bloomCanvas.width = w; bloomCanvas.height = h;
+    const bctx = bloomCanvas.getContext('2d');
+    bctx.imageSmoothingEnabled = true;
+    bctx.imageSmoothingQuality = 'high';
+    bctx.drawImage(smallCanvas, 0, 0, w, h);
+    return bctx.getImageData(0, 0, w, h);
+  }
+
+  // ---- analyze the photo and flag the two best-fit film stocks ----
+  function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+  function analyzeImage(imageData){
+    const data = imageData.data;
+    const stride = 16; // sample every 16th pixel for speed
+    let sumR=0, sumG=0, sumB=0, sumLum=0, sumLum2=0;
+    let highlightCount=0, skinCount=0, greenCount=0, skyCount=0, satSum=0, n=0;
+
+    for (let i = 0; i < data.length; i += stride*4){
+      const r=data[i], g=data[i+1], b=data[i+2];
+      sumR+=r; sumG+=g; sumB+=b;
+      const lum = 0.299*r+0.587*g+0.114*b;
+      sumLum+=lum; sumLum2+=lum*lum;
+      const max=Math.max(r,g,b), min=Math.min(r,g,b);
+      satSum += max===0 ? 0 : (max-min)/max;
+      if (lum>230) highlightCount++;
+
+      // skin detection via YCbCr (more reliable across skin tones/lighting than raw RGB rules)
+      const cb = 128 - 0.168736*r - 0.331264*g + 0.5*b;
+      const cr = 128 + 0.5*r - 0.418688*g - 0.081312*b;
+      if (cb>=77 && cb<=127 && cr>=133 && cr<=173 && lum>40 && lum<235) skinCount++;
+
+      // foliage / greenery
+      if (g>r && g>b && g>55 && g<215) greenCount++;
+
+      // open sky (bright, blue-dominant, not deep-shadow blue)
+      if (b>r && b>=g-6 && b>110 && lum>110) skyCount++;
+
+      n++;
+    }
+    const avgR=sumR/n, avgG=sumG/n, avgB=sumB/n;
+    const avgLum=sumLum/n;
+    const stdLum = Math.sqrt(Math.max(0, sumLum2/n - avgLum*avgLum));
+
+    return {
+      warmth: clamp((avgR-avgB)/100, -1, 1),
+      avgSat: clamp(satSum/n, 0, 1),
+      darkness: clamp(1-avgLum/255, 0, 1),
+      highlightRatio: highlightCount/n,
+      skinRatio: skinCount/n,
+      greenRatio: greenCount/n,
+      skyRatio: skyCount/n,
+      contrastStd: clamp(stdLum/100, 0, 1),
+    };
+  }
+
+  function scoreFilms(f){
+    const coolness = Math.max(0, -f.warmth);
+    const warmness = Math.max(0, f.warmth);
+    const landscapeSignal = clamp(f.greenRatio + f.skyRatio, 0, 1);
+    const lowSat2 = Math.pow(1-f.avgSat, 2); // punishes anything but genuinely muted color
+
+    return {
+      gold200:       warmness*0.50 + f.avgSat*0.25 + (1-f.contrastStd)*0.15,
+      portra800:     f.skinRatio*4.5 + warmness*0.20 + (1-f.contrastStd)*0.10,
+      ektar100:      f.avgSat*0.40 + f.contrastStd*0.20 + landscapeSignal*0.25,
+      superia400:    landscapeSignal*0.55 + coolness*0.25 + f.avgSat*0.15,
+      velvia50:      f.avgSat*0.35 + landscapeSignal*0.45 + f.contrastStd*0.15,
+      cinestill800t: f.highlightRatio * (0.6 + f.darkness) * 4.0,
+      trix400:       lowSat2 * f.contrastStd * 1.3,
+      hp5plus:       lowSat2 * (0.25 + f.darkness*0.5) * 0.9,
+    };
+  }
+
+  function applyRecommendations(imageData){
+    const features = analyzeImage(imageData);
+    const scores = scoreFilms(features);
+    const ranked = Object.entries(scores).sort((a,b) => b[1]-a[1]);
+    const topTwo = ranked.slice(0,2).map(e => e[0]);
+
+    document.querySelectorAll('.stock-card').forEach(card => {
+      const isTop = topTwo.includes(card.dataset.id);
+      card.classList.toggle('suggested', isTop);
+      card.classList.toggle('active', card.dataset.id === topTwo[0]);
+    });
+    activeFilmId = topTwo[0];
+    document.getElementById('railNote').classList.add('show');
+  }
+
+  // ---- core film processing ----
+  function applyFilm(imageData, preset, intensity, grainOn, vignetteOn, bloomLayer){
+    const data = new Uint8ClampedArray(imageData.data); // copy
+    const src = imageData.data;
+    const w = imageData.width, h = imageData.height;
+    const cx = w/2, cy = h/2;
+    const cf = (259*(preset.contrast+255)) / (255*(259-preset.contrast));
+
+    for (let i = 0; i < src.length; i += 4){
+      const r = src[i], g = src[i+1], b = src[i+2];
+
+      // color temperature shift
+      let tr = r + preset.tempR;
+      let tb = b + preset.tempB;
+      let tg = g;
+
+      // luminance (used for saturation + B&W)
+      const lum = 0.299*tr + 0.587*tg + 0.114*tb;
+
+      let sr, sg, sb;
+      if (preset.bw){
+        sr = sg = sb = lum;
+      } else {
+        sr = lum + (tr-lum)*preset.sat;
+        sg = lum + (tg-lum)*preset.sat;
+        sb = lum + (tb-lum)*preset.sat;
+      }
+
+      // shadow lift (film doesn't crush to pure black the way sensors do)
+      if (preset.shadowLift){
+        const liftAmt = preset.shadowLift * 0.3;
+        sr += liftAmt * (1 - sr/255);
+        sg += liftAmt * (1 - sg/255);
+        sb += liftAmt * (1 - sb/255);
+      }
+
+      // exposure boost (cheap flash cameras that overshoot exposure and blow out highlights)
+      if (preset.exposureBoost){
+        sr += preset.exposureBoost;
+        sg += preset.exposureBoost;
+        sb += preset.exposureBoost;
+      }
+
+      // contrast curve
+      sr = cf*(sr-128)+128;
+      sg = cf*(sg-128)+128;
+      sb = cf*(sb-128)+128;
+
+      // film grain
+      if (grainOn && preset.grain){
+        const n = (Math.random()-0.5) * preset.grain;
+        sr += n; sg += n; sb += n;
+      }
+
+      // blend toward original based on intensity
+      let fr = r + (sr-r)*intensity;
+      let fg = g + (sg-g)*intensity;
+      let fb = b + (sb-b)*intensity;
+
+      // vignette + flash hotspot (share the same center-distance calc)
+      if ((vignetteOn && preset.vignette) || preset.flashHotspot){
+        const x = (i/4) % w;
+        const y = Math.floor((i/4) / w);
+        const dx = (x-cx)/cx, dy = (y-cy)/cy;
+        const dist = Math.min(1, Math.sqrt(dx*dx+dy*dy));
+
+        if (vignetteOn && preset.vignette){
+          const vf = 1 - preset.vignette * intensity * (dist*dist);
+          fr *= vf; fg *= vf; fb *= vf;
+        }
+        if (preset.flashHotspot){
+          const hotspot = preset.flashHotspot * intensity * Math.max(0, 1 - dist*1.2) * 90;
+          fr += hotspot; fg += hotspot; fb += hotspot;
+        }
+      }
+
+      // halation glow (e.g. Cinestill 800T's signature red bloom around highlights)
+      if (preset.halation && bloomLayer){
+        const bd = bloomLayer.data;
+        const alpha = bd[i+3] / 255;
+        const strength = preset.halation * intensity;
+        fr += bd[i]   * alpha * strength;
+        fg += bd[i+1] * alpha * strength;
+        fb += bd[i+2] * alpha * strength;
+      }
+
+      data[i] = fr; data[i+1] = fg; data[i+2] = fb; data[i+3] = src[i+3];
+    }
+    return new ImageData(data, w, h);
+  }
+
+  let renderTimeout = null;
+  function renderFilteredImage(){
+    if (!baseImageData) return;
+    processingBadge.style.display = 'block';
+    clearTimeout(renderTimeout);
+    renderTimeout = setTimeout(() => {
+      const preset = FILMS.find(f => f.id === activeFilmId);
+      const intensity = intensitySlider.value / 100;
+      const out = applyFilm(baseImageData, preset, intensity, grainToggle.checked, vignetteToggle.checked, halationLayer);
+      ctx.putImageData(out, 0, 0);
+      processingBadge.style.display = 'none';
+    }, 10);
+  }
+
+  intensitySlider.addEventListener('input', renderFilteredImage);
+  grainToggle.addEventListener('change', renderFilteredImage);
+  vignetteToggle.addEventListener('change', renderFilteredImage);
+
+  downloadBtn.addEventListener('click', () => {
+    const preset = FILMS.find(f => f.id === activeFilmId);
+    const link = document.createElement('a');
+    link.download = 'film-lab-' + preset.id + '.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+})();
+</script>
+
+</body>
+</html>
