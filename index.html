@@ -1,104 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <title>Portfolio • JD Peppelman</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JD Peppelman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
 </head>
-
 <body>
 
-    <h1>Portfolio • JD Peppelman</h1>
-    <div class="main" id="main">
-        <div class="scrollbox" id="scrollbox2">
-            <h3>Web Projects</h3>
-            <div class="card" onmouseenter="typeIn(this, 'Experiment in automated art', 50)">
-                <a href="/thewindow/"><div class="display-content">The Window</div></a>
-                <div class="hover-content"></div>
-            </div>
-            <div class="card" onmouseenter="typeIn(this, 'Space Invaders inspired game created with PIXI.js', 35)">
-                <a href="/stardefense/"><div class="display-content">Star Defense</div></a>
-                <div class="hover-content"></div>
-            </div>
-            <div class="card"
-                onmouseenter="typeIn(this, 'How country is a song? 🤠', 50)">
-                <a href="/countrynessrating/"><div class="display-content">Countryness Rating</div></a>
-                <div class="hover-content"></div>
-            </div>
-        </div>
-        <div class="scrollbox" id="scrollbox3">
-            <h3>Other Projects</h3>
-            <div class="card" onmouseenter="typeIn(this, 'Command line spotify client. Coming soon', 40)">
-                <a href="/rustify/rustify.html"><div class="display-content">Rustify</div></a>
-                <div class="hover-content"></div>
-            </div>
-            <div class="card"
-                onmouseenter="typeIn(this, 'Data about the correlations between different race specialties in swimming', 25)">
-                <a href="/swim-statistics/"><div class="display-content">Swim Statistics</div></a>
-                <div class="hover-content"></div>
-            </div>
-            <div class="card"
-                onmouseenter="typeIn(this, 'Online notes written in LaTeX for my Multivariable Calc/Differential Equations class', 20)">
-                <a href="/mvde-calc-notes"><div class="display-content">Multivariable Notes</div></a>
-                <div class="hover-content"></div>
-            </div>
-        </div>
-        <div class="scrollbox">
-            <h3>Links</h3>
-            <div class="card" onmouseenter="typeIn(this, 'Instagram', 100)">
-                <a href="https://www.instagram.com/jd.peppelman"><div class="display-content">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                    </svg>
-                </div></a>
-                <div class="hover-content"></div>
-            </div>
-            <div class="card"
-                onmouseenter="typeIn(this, 'Github. Repository for various programming projects', 30)">
-                <a href="https://github.com/ThePotato10"><div class="display-content">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                    </svg>
-                </div></a>
-                <div class="hover-content"></div>
-            </div>
-        </div>
+<div class="field">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="blob b4"></div>
+</div>
+
+<nav>
+  <div class="navbar glass">
+    <a href="#top" class="nav-name">JD Peppelman</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#math">Math</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <div class="hero-inner glass">
+    <span class="eyebrow">Ann Arbor, MI &amp; Bethesda, MD</span>
+    <h1>Building things.</h1>
+    <p class="tag">Applied math student at the University of Michigan, concentrating in Discrete and Algorithmic Methods, with a minor in Philosophy. I like problems that have a best answer, rather than a correct one.</p>
+    <div class="hero-meta">
+      <span class="pill">B.S. Mathematical Sciences</span>
+      <span class="pill">Discrete &amp; Algorithmic Methods</span>
+      <span class="pill">Philosophy Minor</span>
+      <span class="pill">University of Michigan '29</span>
+    </div>
+    <div class="socials">
+      <a class="social-link" href="https://github.com/ThePotato10" target="_blank" rel="noopener">GitHub</a>
+      <a class="social-link" href="https://www.linkedin.com/in/john-peppelman-ba26b1384/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social-link" href="https://instagram.com/jd.peppelman" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</header>
+
+<section id="work" class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Selected Work</span>
+    <h2>Some things I've built</h2>
+    <p>A mix of tooling, from-scratch implementations, and one piece that isn't trying to be useful at all.</p>
+  </div>
+
+  <div class="proj-grid">
+
+    <div class="proj-card glass">
+      <span class="proj-num">01 · Web App</span>
+      <h3>Film Lab</h3>
+      <p>A browser-based, canvas-driven simulator for analog film stocks (Kodak Portra, Ektar, Gold, Tri-X, Ilford HP5, Cinestill 800T, Fuji Velvia, etc) modeling grain, color response, and contrast curves. An auto-suggestion engine reads the pixel data of an uploaded photo and recommends the best-fit stock. Everything runs client-side.</p>
+      <div class="proj-tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">Canvas</span>
+        <span class="tag">Image Processing</span>
+      </div>
+      <a class="proj-link" href="https://thepotato10.github.io/filmlab" target="_blank" rel="noopener">View project <span class="arrow">→</span></a>
     </div>
 
-    <div class="bio">
-        <p>I got my first personal computer for Christmas when I was 12. It was a underpowered chromebook, but, using
-            Codecademy and the built in text editor, I started to build my own websites. After that winter
-            break was over, I stopped and I didn't really start again until COVID hit. While I was forced inside for
-            a few months, I taught myself JavaScript and Python, and I've been coding ever since. I learned to love the feeling 
-            of problem solving and slowly seeing a project come together. I realized that this was my passion, and something I 
-            wanted to do for the rest of my life. </p>
+    <div class="proj-card glass">
+      <span class="proj-num">02 · From Scratch</span>
+      <h3>Autograd Engine</h3>
+      <p>A small automatic-differentiation engine built from first principles in C++: scalar-valued computation graphs, reverse-mode backpropagation, and a minimal neural net library trained on top of it. Implemented with manual memory management rather than leaning on a garbage-collected runtime, in the spirit of Karpathy's micrograd but built to understand both backprop and memory ownership as code, not as an API call.</p>
+      <div class="proj-tags">
+        <span class="tag">C++</span>
+        <span class="tag">Autodiff</span>
+        <span class="tag">Manual Memory Management</span>
+      </div>
+      <a class="proj-link" href="https://github.com/ThePotato10" target="_blank" rel="noopener">View on GitHub <span class="arrow">→</span></a>
     </div>
 
-    <script>
-        function typeIn(container, text, speed) {
-            let textbox = container.children[1];
-            textbox.innerHTML = "";
+    <div class="proj-card glass">
+      <span class="proj-num">03 · Generative Art</span>
+      <h3>The Window</h3>
+      <p>An algorithmically generated artwork where every pattern has a vanishingly small chance of ever appearing again. Each press of the button shows something no one else in the universe will see. A thought experiment on authorship: is the artist the machine, the programmer, or the viewer who pressed the button?</p>
+      <div class="proj-tags">
+        <span class="tag">Generative</span>
+        <span class="tag">Canvas</span>
+        <span class="tag">Software Art</span>
+      </div>
+      <a class="proj-link" href="https://thepotato10.github.io/thewindow/" target="_blank" rel="noopener">View project <span class="arrow">→</span></a>
+    </div>
 
-            let content = "";
-            let contentIndex = 0;
+    <div class="proj-card glass">
+      <span class="proj-num">04 · Java</span>
+      <h3>Algorithms &amp; Data Structures Suite</h3>
+      <p>A collection of core implementations built for the sake of building them: a binary search tree, an in-place merge sort achieving O(n log n) time in constant space, a feed-forward neural network written from scratch, and a multithreaded Monte Carlo estimator for π with a live GUI.</p>
+      <div class="proj-tags">
+        <span class="tag">Java</span>
+        <span class="tag">Data Structures</span>
+        <span class="tag">Concurrency</span>
+      </div>
+      <a class="proj-link" href="https://github.com/ThePotato10" target="_blank" rel="noopener">View on GitHub <span class="arrow">→</span></a>
+    </div>
 
-            let intervalId = setInterval(() => {
-                content += text.substring(contentIndex, contentIndex + 1);
-                contentIndex++;
+  </div>
+</section>
 
-                textbox.innerHTML = content;
-            }, speed);
+<section id="math" class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Coursework &amp; Proofs</span>
+    <h2>Math at Michigan</h2>
+    <p>The theoretical side of the same interests — finite structures, algorithms, and the mathematics that sits underneath computer science.</p>
+  </div>
 
-            setTimeout(function () { clearInterval(intervalId) }, 2000);
-        }
-    </script>
+  <div class="math-grid">
+    <div class="math-panel glass">
+      <h3>B.S. Mathematical Sciences — Discrete &amp; Algorithmic Methods</h3>
+      <p>My major track focuses on the analysis of the finite structures (graphs, networks, codes, and combinatorial systems) forming the mathematical core underneath much of computer science. The coursework spans optimization, algorithmic complexity, and probabilistic estimation, paired with a Philosophy minor on the side.</p>
+      <p>Core coursework so far includes EECS 280 (Programming &amp; Data Structures), EECS 203 (Discrete Mathematics), Math 217 (proof-based Linear Algebra), and Math 425 (Probability). The concentration draws from a track that includes:</p>
+      <div class="course-chips">
+        <span class="course-chip">Math 416 — Theory of Algorithms</span>
+        <span class="course-chip">Math 465 — Combinatorics</span>
+        <span class="course-chip">Math 565 — Combinatorics &amp; Graph Theory</span>
+        <span class="course-chip">Math 567 — Coding Theory</span>
+        <span class="course-chip">EECS 477 — Intro to Algorithms</span>
+        <span class="course-chip">EECS 586 — Design &amp; Analysis of Algorithms</span>
+      </div>
+    </div>
+
+    <div class="proofs-panel glass">
+      <h3>Proof Notebook</h3>
+      <p>A few write-ups from coursework, typeset in LaTeX. Drop images or PDFs into these slots.</p>
+      <div class="proof-slot">
+        <span class="plus">+</span>
+        Add proof — e.g. Math 217, Rank-Nullity / eigenspace invariance
+      </div>
+      <div class="proof-slot">
+        <span class="plus">+</span>
+        Add proof
+      </div>
+      <div class="proof-slot">
+        <span class="plus">+</span>
+        Add proof
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="wrap">
+  <div class="about-panel glass">
+    <div>
+      <h2>About</h2>
+      <p>I've been writing code to build interesting things since I was twelve years old. Now I like working on hard problems on anything from algoritmic efficiency to philosophy of mind and going down Wikipedia rabbit holes.</p>
+    </div>
+    <div class="about-facts">
+      <div class="fact">
+        <div class="label">Studying</div>
+        <div class="val">B.S. Mathematical Sciences, Discrete &amp; Algorithmic Methods · Philosophy Minor</div>
+      </div>
+      <div class="fact">
+        <div class="label">Based</div>
+        <div class="val">Ann Arbor, MI / Bethesda, MD</div>
+      </div>
+      <div class="fact">
+        <div class="label">Interested in</div>
+        <div class="val">Algorithm design, ML theory, generative systems</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" class="wrap">
+  <div class="footer-panel glass">
+    <h2>Contact</h2>
+    <p><a href="mailto:jd.peppelman@gmail.com" style="text-decoration:none; border-bottom:1px solid var(--rose);">jd.peppelman@gmail.com</a> &nbsp;·&nbsp; <a href="mailto:jdpepp@umich.edu" style="text-decoration:none; border-bottom:1px solid var(--rose);">jdpepp@umich.edu</a></p>
+    <div class="footer-links">
+      <a class="social-link" href="mailto:jd.peppelman@gmail.com">Email</a>
+      <a class="social-link" href="https://github.com/ThePotato10" target="_blank" rel="noopener">GitHub</a>
+      <a class="social-link" href="https://www.linkedin.com/in/john-peppelman-ba26b1384/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social-link" href="https://instagram.com/jd.peppelman" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom">Built &amp; designed by JD Peppelman</div>
+</footer>
+
 </body>
-
 </html>
